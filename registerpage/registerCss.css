@@ -1,0 +1,278 @@
+:root {
+  --main-color: rgb(223, 87, 38);
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-variant: small-caps;
+}
+
+body {
+  color: black;
+  font-size: 15pt;
+  background-color: white;
+  margin: 0 10px;
+  box-shadow: 0px 0px 40px var(--main-color);
+  height: 100vh;
+}
+
+select {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+option {
+  background-color: var(--main-color);
+  font-variant: small-caps;
+  padding: 5 20px;
+  text-align: center;
+  border: 2px solid white;
+}
+
+header {
+  width: 100%;
+}
+
+body header nav {
+  height: 80px;
+  background-color: var(--main-color);
+  color: #ffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 98.7%;
+  position: fixed;
+  z-index: 1000;
+}
+
+#home {
+  color: white;
+}
+
+#home img {
+  height: 50px;
+  align-items: center;
+  color: white;
+  border: none;
+}
+
+nav div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  margin: auto auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  transition: color 0.5s ease;
+}
+
+nav a:hover {
+  border-bottom: 3px solid white;
+}
+
+nav .userName {
+  font-size: 26pt;
+  padding: 6px;
+}
+
+nav .userImage {
+  height: 65px;
+  border-radius: 100%;
+  padding: 5px;
+  background-size: cover;
+  border: 1px solid white;
+}
+
+.container {
+  top: 20vh;
+  margin: 0 auto;
+  position: relative;
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 20px;
+  outline: none;
+  overflow: hidden;
+  box-shadow: 0 0px 35px var(--main-color);
+}
+
+.container .img {
+  width: 50%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+}
+
+.container .img img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+  
+}
+
+.form-container {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  outline: none;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.form-inner {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.form {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-right: 2px solid;
+}
+
+.form h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.form input[type=submit] {
+  width: 100%;
+  padding: 10px;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.img button {
+  width: 50%;
+  padding: 10px;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#slide-register-btn {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  max-width: 200px;
+  z-index: 200;
+}
+
+#slide-login-btn {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  max-width: 200px;
+  z-index: 200;
+}
+
+.errLine {
+  display: flex;
+  font-size: 18px;
+}
+
+.errLine img[src="black-circle.png"] {
+  height: 10px;
+  line-height: 20px;
+  padding: 0px;
+  margin: 5px;
+  background-color: none;
+  box-shadow: 0px 0px 10px rgb(249, 251, 251);
+}
+
+.errLine img {
+  height: 20px;
+  padding: 0px;
+  margin-right: 5px;
+  background-color: rgba(0, 255, 17, 0.785);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+.err {
+  margin: auto auto auto 30%;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: left;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .container .img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container .img img {
+    display: none;
+  }
+
+  .container .form-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .img #slide-login-btn, .img #slide-register-btn {
+    display: flex;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    position: absolute;
+  }
+
+  .form-inner {
+    width: 200%; /* Ensure it slides properly */
+  }
+
+  .form {
+    width: 50%;
+  }
+
+  .err {
+    margin: 20px 0;
+    width: 100%;
+    position: static;
+  }
+}
