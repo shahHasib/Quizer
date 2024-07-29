@@ -1,0 +1,409 @@
+:root {
+  --main-color: rgb(223, 87, 38);
+}
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-variant: small-caps;
+
+}
+
+body {
+  color: black;
+  font-size: 15pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 0 10px;
+  box-shadow: 0px 0px 40px var(--main-color);
+}
+
+
+select {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+option {
+  background-color: var(--main-color);
+  font-variant: small-caps;
+  padding: 5 20px;
+  text-align: center;
+  border: 2px solid white;
+
+
+}
+
+header {
+  width: 100%;
+}
+
+body header nav {
+  height: 80px;
+  background-color: var(--main-color);
+  color: #ffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 98.7%;
+  position: fixed;
+  z-index: 1000;
+
+}
+
+nav div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  margin: auto auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  transition: color 0.5s ease;
+}
+
+nav a:hover {
+  border-bottom: 3px solid white;
+}
+
+nav .userName {
+  font-size: 26pt;
+  padding: 6px;
+}
+
+nav .userImage {
+  height: 65px;
+  border-radius: 100%;
+  padding: 5px;
+  background-size: cover;
+  border: 1px solid white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  width: 100%;
+  padding: 100px 0 0px 0;
+  color: black;
+}
+
+.container h1 {
+  font-size: 28px;
+  padding: 32px 0px 32px;
+}
+
+.container p {
+  font-size: 15pt;
+  padding: 0px 0px 40px;
+}
+
+.container .switchbtn {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  margin: 30px 5px;
+}
+
+.container .switchbtn button {
+  font-size: 18px;
+  padding: 0 0 12px;
+  color: var(--main-color);
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid;
+}
+
+.container .switchbtn .btnLeaderboard {
+  margin-left: 40px;
+  border-bottom: none;
+}
+
+.container .switchbtn .btnLeaderboard:hover {
+  border-bottom: 2px solid var(--main-color);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: black;
+  margin: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 4px 15px var(--main-color);
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  outline: none;
+  width: 300px;
+  animation: rotate 5s infinite linear;
+  transition: transform 0.3s;
+}
+
+@keyframes rotate {
+  0% {
+    box-shadow: 10px 10px 20px var(--main-color);
+  }
+
+  25% {
+    box-shadow: -10px 10px 20px var(--main-color);
+  }
+
+  50% {
+    box-shadow: -10px -10px 20px var(--main-color);
+  }
+
+  75% {
+    box-shadow: 10px=10px 20px var(--main-color);
+  }
+
+  100% {
+    box-shadow: 10px 10px 20px var(--main-color);
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 30px var(--main-color);
+  position: relative;
+  z-index: 0;
+}
+
+.card .img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .items {
+  padding: 15px;
+  text-align: center;
+}
+
+.card .items h2 {
+  color: var(--main-color);
+}
+
+.card .items .grade,
+.card .items .level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.card .items .grade img,
+.card .items .level img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.items button {
+  padding: 8px 20px;
+  margin: 20px 25px;
+  font-size: 18px;
+  border-color: var(--main-color);
+  background-color: transparent;
+  color: var(--main-color);
+  border-radius: 5px;
+}
+
+.items button:hover {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 40px;
+  margin: 5px 0px;
+  height: 3px;
+  background-color: white;
+  transition: 900ms;
+}
+
+.bar-1 {
+  rotate: 45deg;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.bar-2 {
+  opacity: 0;
+}
+
+.bar-3 {
+  rotate: -45deg;
+
+}
+
+footer {
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  margin: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links a,
+.footer-social a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-social a {
+  margin: 20 10px;
+}
+
+.footer-social img {
+  height: 30px;
+  border-radius: 50%;
+}
+.footer-bottom {
+  border-top: 1px solid white;
+ padding-top: 20px;
+  
+ 
+}
+
+
+
+
+
+@media (max-width:768px) {
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    margin: 10px;
+  }
+
+  .links {
+    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+    font-size: 20pt;
+    width: 70%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 75px;
+  }
+
+  .active {
+
+    display: flex;
+
+  }
+
+  .active a {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  nav a:hover {
+    border: 3px solid white;
+  }
+
+  nav .userprofile {
+    position: absolute;
+    margin: 20px;
+
+  }
+
+  nav .userName {
+    font-size: 40px;
+    margin: 0 10px;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .intro h1 {
+    font-size: 2em;
+  }
+
+  .intro p {
+    font-size: 1em;
+  }
+
+  .footer-container {
+    padding: 10px;
+  }
+
+  footer {
+    padding: 5px 0;
+  }
+
+  .footer-links ul li,
+  .footer-contact p,
+  .footer-social a {
+    font-size: 14px;
+  }
+}
