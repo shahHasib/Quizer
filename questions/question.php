@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go to Quizer Website</title>
+    <title>Questions</title>
 </head>
 <body>
-    <a href="homepage\index.php" class="link-heading">Tap me to go to the Quizer website</a>
+    <header>
+        <?php
+        include '../homepage/index.php';
+        
+        ?>
+    </header>
 </body>
 </html>
