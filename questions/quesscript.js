@@ -1,118 +1,95 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const playNowButton = document.getElementById("play-now");
-    const quizPage = document.getElementById("quiz-page");
-    const startPage = document.getElementById("start-page");
-    const questionElement = document.getElementById("question");
-    const options = document.querySelectorAll(".option");
-    const timerElement = document.getElementById("time-left");
-    const scoreElement = document.getElementById("score");
-    const leaderboard = document.getElementById("leaderboard");
-    const music = new Audio('path/to/music.mp3'); // replace with actual music file path
+let currentQuestionIndex = 0;
+let score = 0;
+let timer;
+const totalQuestions = 10;
+const timePerQuestion = 30; // 30 seconds
+let questions = []; // Array to store fetched questions
 
-    let currentQuestionIndex = 0;
-    let score = 0;
-    let timer;
-    let questions = [];
+function fetchQuizData(subject) {
+  const subjectMap = {
+    'computer science': 18, // Example category ID
+    'entertainment': 11 // Example category ID
+  };
 
-    const fetchQuestions = async () => {
-        const response = await fetch('https://opentdb.com/api.php?amount=10&category=18&type=multiple');
-        const data = await response.json();
-        return data.results.map(question => ({
-            text: decodeURIComponent(question.question),
-            options: shuffleArray([
-                decodeURIComponent(question.correct_answer),
-                ...question.incorrect_answers.map(answer => decodeURIComponent(answer))
-            ]),
-            correctOption: decodeURIComponent(question.correct_answer)
-        }));
-    };
+  const categoryId = subjectMap[subject.toLowerCase()];
+  if (!categoryId) {
+    console.error('Invalid subject');
+    return;
+  }
 
-    const shuffleArray = (array) => {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    };
+  fetch(`https://opentdb.com/api.php?amount=${totalQuestions}&category=${categoryId}&difficulty=medium&type=multiple`)
+    .then(response => response.json())
+    .then(data => {
+      questions = data.results;
+      displayQuiz(); // Start displaying questions
+    })
+    .catch(error => {
+      console.error(`Error: ${error}`);
+    });
+}
 
-    const startQuiz = async () => {
-        startPage.style.display = "none";
-        quizPage.style.display = "block";
-        music.play();
-        questions = await fetchQuestions();
-        currentQuestionIndex = 0;
-        score = 0;
-        scoreElement.textContent = score;
-        showQuestion(questions[currentQuestionIndex]);
-    };
+function displayQuiz() {
+  if (currentQuestionIndex >= totalQuestions) {
+    displayScore();
+    return;
+  }
 
-    const showQuestion = (question) => {
-        questionElement.textContent = question.text;
-        options.forEach((button, index) => {
-            button.textContent = question.options[index];
-            button.onclick = () => selectAnswer(question.options[index], question.correctOption);
-        });
-        startTimer();
-    };
+  const questionData = questions[currentQuestionIndex];
+  const questionContainer = document.getElementById('question-container');
+  
+  if (questionContainer) {
+    // Set question text
+    const questionElement = questionContainer.querySelector('.question');
+    questionElement.textContent = questionData.question;
 
-    const startTimer = () => {
-        let timeLeft = 10;
-        timerElement.textContent = timeLeft;
-        timer = setInterval(() => {
-            timeLeft--;
-            timerElement.textContent = timeLeft;
-            if (timeLeft === 0) {
-                clearInterval(timer);
-                currentQuestionIndex++;
-                if (currentQuestionIndex < questions.length) {
-                    showQuestion(questions[currentQuestionIndex]);
-                } else {
-                    endQuiz();
-                }
-            }
-        }, 1000);
-    };
+    // Get buttons for options
+    const buttons = questionContainer.querySelectorAll('.options button');
+    
+    // Combine correct and incorrect answers and shuffle
+    const allOptions = [questionData.correct_answer, ...questionData.incorrect_answers];
+    allOptions.sort(() => Math.random() - 0.5);
 
-    const selectAnswer = (selectedOption, correctOption) => {
-        clearInterval(timer);
-        if (selectedOption === correctOption) {
-            score++;
-            scoreElement.textContent = score;
-        }
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            showQuestion(questions[currentQuestionIndex]);
-        } else {
-            endQuiz();
-        }
-    };
+    buttons.forEach((button, i) => {
+      if (i < allOptions.length) {
+        button.textContent = allOptions[i];
+        button.onclick = () => handleAnswer(button.textContent, questionData.correct_answer);
+      }
+    });
 
-    const endQuiz = () => {
-        music.pause();
-        quizPage.style.display = "none";
-        startPage.style.display = "block";
-        saveScore();
-        displayLeaderboard();
-    };
+    startTimer();
+  }
+}
 
-    const saveScore = () => {
-        const name = prompt("Enter your name:");
-        const leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
-        leaderboardData.push({ name, score });
-        localStorage.setItem("leaderboard", JSON.stringify(leaderboardData));
-    };
+function handleAnswer(selectedOption, correctAnswer) {
+  if (selectedOption === correctAnswer) {
+    score++;
+  }
+  clearInterval(timer); // Stop the timer
+  currentQuestionIndex++;
+  setTimeout(displayQuiz, 1000); // Wait for 1 second before displaying the next question
+}
 
-    const displayLeaderboard = () => {
-        const leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
-        leaderboard.innerHTML = "<h2>Leaderboard</h2>";
-        leaderboardData.sort((a, b) => b.score - a.score);
-        leaderboardData.forEach(entry => {
-            const div = document.createElement("div");
-            div.textContent = `${entry.name}: ${entry.score}`;
-            leaderboard.appendChild(div);
-        });
-    };
+function startTimer() {
+  let timeLeft = timePerQuestion;
+  const timerElement = document.getElementById('timer');
+  timerElement.textContent = `Time left: ${timeLeft} seconds`;
 
-    playNowButton.addEventListener("click", startQuiz);
-    displayLeaderboard();
-});
+  timer = setInterval(() => {
+    timeLeft--;
+    timerElement.textContent = `Time left: ${timeLeft} seconds`;
+    
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      currentQuestionIndex++;
+      setTimeout(displayQuiz, 1000); // Move to the next question after 1 second
+    }
+  }, 1000);
+}
+
+function displayScore() {
+  const quizContainer = document.getElementById('quiz');
+  quizContainer.innerHTML = `<h2>Your Score: ${score}/${totalQuestions}</h2>`;
+}
+
+// Call the function to start the quiz with a specific subject
+fetchQuizData('computer science'); // Replace with the desired subject in lowercase

@@ -33,3 +33,7 @@ if(e.target.value=="blue"){
  
 
 })
+
+function startQuiz(language) {
+  window.location.href = `../questions/question.html?lang=${language}`;
+}
