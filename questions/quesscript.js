@@ -1,95 +1,177 @@
-let currentQuestionIndex = 0;
-let score = 0;
-let timer;
-const totalQuestions = 10;
-const timePerQuestion = 30; // 30 seconds
-let questions = []; // Array to store fetched questions
+document.addEventListener('DOMContentLoaded', () => {
+    const startPage = document.getElementById('start-page');
+    const quizPage = document.getElementById('quiz-page');
+    const endPage = document.getElementById('end-page');
+    const nameModal = document.getElementById('name-modal');
+    const closeModal = document.querySelector('.close');
+    const submitScoreButton = document.getElementById('submit-score');
+    const usernameInput = document.getElementById('username');
+    const finalScoreElement = document.getElementById('final-score');
+    const leaderboardList = document.getElementById('leaderboard-list');
+    const pauseButton = document.getElementById('pause-button');
+    const restartButton = document.getElementById('restart-button');
+    const backButton = document.getElementById('back-button');
+    const timerElement = document.getElementById('time-left');
+    const options = document.getElementById('options');
+    const loader = document.getElementById('loader');
+    const scoreElement = document.getElementById('score');
 
-function fetchQuizData(subject) {
-  const subjectMap = {
-    'computer science': 18, // Example category ID
-    'entertainment': 11 // Example category ID
-  };
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let timer;
+    let isPaused = false;
 
-  const categoryId = subjectMap[subject.toLowerCase()];
-  if (!categoryId) {
-    console.error('Invalid subject');
-    return;
-  }
-
-  fetch(`https://opentdb.com/api.php?amount=${totalQuestions}&category=${categoryId}&difficulty=medium&type=multiple`)
-    .then(response => response.json())
-    .then(data => {
-      questions = data.results;
-      displayQuiz(); // Start displaying questions
-    })
-    .catch(error => {
-      console.error(`Error: ${error}`);
-    });
-}
-
-function displayQuiz() {
-  if (currentQuestionIndex >= totalQuestions) {
-    displayScore();
-    return;
-  }
-
-  const questionData = questions[currentQuestionIndex];
-  const questionContainer = document.getElementById('question-container');
-  
-  if (questionContainer) {
-    // Set question text
-    const questionElement = questionContainer.querySelector('.question');
-    questionElement.textContent = questionData.question;
-
-    // Get buttons for options
-    const buttons = questionContainer.querySelectorAll('.options button');
-    
-    // Combine correct and incorrect answers and shuffle
-    const allOptions = [questionData.correct_answer, ...questionData.incorrect_answers];
-    allOptions.sort(() => Math.random() - 0.5);
-
-    buttons.forEach((button, i) => {
-      if (i < allOptions.length) {
-        button.textContent = allOptions[i];
-        button.onclick = () => handleAnswer(button.textContent, questionData.correct_answer);
-      }
-    });
-
-    startTimer();
-  }
-}
-
-function handleAnswer(selectedOption, correctAnswer) {
-  if (selectedOption === correctAnswer) {
-    score++;
-  }
-  clearInterval(timer); // Stop the timer
-  currentQuestionIndex++;
-  setTimeout(displayQuiz, 1000); // Wait for 1 second before displaying the next question
-}
-
-function startTimer() {
-  let timeLeft = timePerQuestion;
-  const timerElement = document.getElementById('timer');
-  timerElement.textContent = `Time left: ${timeLeft} seconds`;
-
-  timer = setInterval(() => {
-    timeLeft--;
-    timerElement.textContent = `Time left: ${timeLeft} seconds`;
-    
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-      currentQuestionIndex++;
-      setTimeout(displayQuiz, 1000); // Move to the next question after 1 second
+    async function fetchTriviaQuestions(category = 18, difficulty = 'easy', amount = 10) {
+        loader.style.display = 'flex'; // Show the loader
+        const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            questions = data.results;
+            startQuiz();
+        } catch (error) {
+            console.error('There has been a problem with your fetch operation:', error);
+        } finally {
+            loader.style.display = 'none'; // Hide the loader
+        }
     }
-  }, 1000);
-}
 
-function displayScore() {
-  const quizContainer = document.getElementById('quiz');
-  quizContainer.innerHTML = `<h2>Your Score: ${score}/${totalQuestions}</h2>`;
-}
+    function startQuiz() {
+        startPage.style.display = 'none';
+        quizPage.style.display = 'block';
+        endPage.style.display = 'none';
+        score = 0;
+        currentQuestionIndex = 0;
+        scoreElement.textContent = score;
+        loadQuestion();
+    }
 
-// Call the function to start the quiz with a specific subject
-fetchQuizData('computer science'); // Replace with the desired subject in lowercase
+    function loadQuestion() {
+        if (currentQuestionIndex >= questions.length) {
+            // Quiz finished
+            quizPage.style.display = 'none';
+            endPage.style.display = 'block';
+            finalScoreElement.textContent = score;
+            nameModal.style.display = 'block'; // Show the modal for name entry
+            return;
+        }
+
+        const question = questions[currentQuestionIndex];
+        document.getElementById('question').textContent = question.question;
+        const allOptions = [...question.incorrect_answers, question.correct_answer];
+        shuffleArray(allOptions);
+        options.innerHTML = ''; // Clear previous options
+
+        allOptions.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.classList.add('option');
+            button.addEventListener('click', () => handleOptionClick(button, option));
+            options.appendChild(button);
+        });
+
+        startTimer();
+    }
+
+    function handleOptionClick(button, selectedOption) {
+        const correctAnswer = questions[currentQuestionIndex].correct_answer;
+
+        // Highlight buttons based on correctness
+        document.querySelectorAll('.option').forEach(btn => {
+            if (btn.textContent === correctAnswer) {
+                btn.style.backgroundColor = 'lightgreen'; // Green for correct answer
+            } else if (btn.textContent === selectedOption) {
+                btn.style.backgroundColor = 'salmon'; // Red for incorrect answer
+            }
+        });
+
+        // Check if the selected option is correct and update the score
+        if (selectedOption === correctAnswer) {
+            score++;
+            scoreElement.textContent = score;
+        }
+
+        // Disable buttons after selection
+        document.querySelectorAll('.option').forEach(btn => btn.disabled = true);
+
+        setTimeout(() => {
+            currentQuestionIndex++;
+            loadQuestion();
+        }, 1000); // Delay to allow user to see the result
+    }
+
+    function startTimer() {
+        let timeLeft = 30; // Set timer for 30 seconds
+        timerElement.textContent = timeLeft;
+        clearInterval(timer);
+        timer = setInterval(() => {
+            if (!isPaused) {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    currentQuestionIndex++;
+                    loadQuestion();
+                }
+            }
+        }, 1000);
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function addScoreToLeaderboard(username, score) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${username}: ${score}`;
+        leaderboardList.appendChild(listItem);
+    }
+
+    submitScoreButton.addEventListener('click', () => {
+        const username = usernameInput.value.trim();
+        if (username) {
+            addScoreToLeaderboard(username, score);
+            nameModal.style.display = 'none'; // Hide the modal
+            usernameInput.value = ''; // Clear the input field
+        } else {
+            alert('Please enter your name!');
+        }
+    });
+
+    closeModal.addEventListener('click', () => {
+        nameModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === nameModal) {
+            nameModal.style.display = 'none'; 
+        }
+    });
+
+    pauseButton.addEventListener('click', () => {
+        isPaused = !isPaused;
+        if (isPaused) {
+            pauseButton.textContent = 'Resume';
+        } else {
+            pauseButton.textContent = 'Pause';
+            startTimer(); // Resume timer
+        }
+    });
+
+    restartButton.addEventListener('click', () => {
+        startQuiz(); // Restart the quiz
+    });
+
+    backButton.addEventListener('click', () => {
+        window.location.href = '../homepage/index.html'; 
+    });
+
+    fetchTriviaQuestions(); 
+});

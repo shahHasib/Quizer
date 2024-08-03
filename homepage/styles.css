@@ -1,5 +1,12 @@
 :root {
   --main-color: rgb(223, 87, 38);
+  
+}
+@property --angle{
+  
+  syntax: '<angle>';
+  initial-value: 1deg;
+  inherits: false;
 }
 
 * {
@@ -156,33 +163,33 @@ nav .userImage {
   box-shadow: 0 4px 15px var(--main-color);
   margin: 20px;
   border-radius: 8px;
-  overflow: hidden;
+  
   outline: none;
   width: 300px;
-  animation: rotate 5s infinite linear;
+  
+}
+.card::after{
+  content: '';
+  background-image:conic-gradient(from --angle,transparent,blue);
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  animation: 5s rotate linear infinite ;
   transition: transform 0.3s;
 }
 
 @keyframes rotate {
-  0% {
-    box-shadow: 10px 10px 20px var(--main-color);
-  }
-
-  25% {
-    box-shadow: -10px 10px 20px var(--main-color);
-  }
-
-  50% {
-    box-shadow: -10px -10px 20px var(--main-color);
-  }
-
-  75% {
-    box-shadow: 10px=10px 20px var(--main-color);
-  }
-
-  100% {
-    box-shadow: 10px 10px 20px var(--main-color);
-  }
+ from{
+  --angle: 0deg;
+ }
+ to{
+  --angle: 360deg;
+ }
 }
 
 .card:hover {
