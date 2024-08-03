@@ -3,9 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go to Quizer Website</title>
+    <title>Landing Page</title>
+    <style>
+        /* Basic reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: #3498db;
+            color: #fff;
+            padding: 80px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #fff;
+            color: #3498db;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        /* Features Section */
+        #features {
+            background-color: #f9f9f9;
+        }
+
+        .feature {
+            margin: 20px;
+        }
+
+        .feature h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1em;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+        }
+
+        #contact p {
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-    <a href="homepage\index.html" class="link-heading">Tap me to go to the Quizer Website</a>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Amazing Service!</h1>
+            <p>Your solution for all things amazing.</p>
+            <a href="#features" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="feature">
+            <h2>Feature One</h2>
+            <p>Description of feature one.</p>
+        </div>
+        <div class="feature">
+            <h2>Feature Two</h2>
+            <p>Description of feature two.</p>
+        </div>
+        <div class="feature">
+            <h2>Feature Three</h2>
+            <p>Description of feature three.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for more information.</p>
+        <a href="mailto:contact@ourservice.com" class="cta-button">Email Us</a>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

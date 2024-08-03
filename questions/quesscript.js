@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = document.getElementById('options');
     const loader = document.getElementById('loader');
     const scoreElement = document.getElementById('score');
+    const music="../resources/play.mp3";
 
     let questions = [];
     let currentQuestionIndex = 0;
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentQuestionIndex = 0;
         scoreElement.textContent = score;
         loadQuestion();
+        music.play();
     }
 
     function loadQuestion() {
