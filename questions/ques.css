@@ -33,7 +33,7 @@ button {
     margin: 5px 0;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: rgb(223, 87, 38);
     color: #fff;
     font-size: 18px;
     cursor: pointer;
@@ -41,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: rgb(223, 87, 38);
 }
 
 button.correct {
@@ -139,7 +139,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: rgb(223, 87, 38);
     color: white;
     border: none;
     border-radius: 5px;
@@ -147,7 +147,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #d71f1f;
 }
 
 /* Positioning buttons */
@@ -177,7 +177,7 @@ button:hover {
 
 .spinner {
     border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border-top: 8px solid rgb(223, 87, 38)8db;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -191,6 +191,6 @@ button:hover {
 
 p {
     font-size: 18px;
-    color: #3498db;
+    color: rgb(223, 87, 38);
     margin-top: 10px;
 }
