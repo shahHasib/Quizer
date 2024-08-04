@@ -1,0 +1,159 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    font-size: 15pt;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.userprofile {
+    display: flex;
+    align-items: center;
+}
+
+.userImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.userName {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.colorName {
+    margin-left: 20px;
+    font-size: 16px;
+}
+.container h1{
+    text-align: center;
+
+}
+
+
+.contact-form {
+   width: 80vw;
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 98%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 98%;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    
+}
+
+.footer-contact p,
+.footer-social a {
+    margin: 5px 0;
+   
+}
+.footer-social a {
+    margin: 5px 0;
+    border-radius: 50%;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <title>Contact Us - Quizer</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="userprofile">
+                <img src="../resources/logo.png" alt="image" class="userImage" />
+                <p class="userName">Quizer</p>
+            </div>
+            <div class="links">
+                <a href="../index.html">Home</a>
+                <a href="../aboutus/about.html">About Us</a>
+                <a href="/contacus/contac.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" id="contact">
+        <h1>Contact Us</h1>
+        <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@quizer.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: 123 Quiz St, Knowledge City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/"><img src="../resources/facebook_icon.png" alt="Facebook"></a>
+                <a href="https://www.twitter.com/"><img src="../resources/twitter_icon.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/"><img src="../resources/instagram_icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Quizer. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
