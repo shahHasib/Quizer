@@ -3,130 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>index</title>
     <style>
-        /* Basic reset */
-        body, html {
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
+            background-color: #120303dd;
         }
 
-        section {
-            padding: 40px;
+        a {
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            border-radius: 10px;
+            padding: 20px 40px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        h1{
+            font-size: 50px;
+            color: white;
+        }
+
+       a h1 {
+            margin: 0;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
 
-        /* Hero Section */
-        #hero {
-            background-color: #3498db;
-            color: #fff;
-            padding: 80px 20px;
+        a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .hero-content h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            background-color: #fff;
-            color: #3498db;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #3498db;
-            color: #fff;
-        }
-
-        /* Features Section */
-        #features {
-            background-color: #f9f9f9;
-        }
-
-        .feature {
-            margin: 20px;
-        }
-
-        .feature h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            font-size: 1em;
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: #3498db;
-            color: #fff;
-        }
-
-        #contact h2 {
-            font-size: 2.5em;
-        }
-
-        #contact p {
-            font-size: 1.2em;
+        a:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Welcome to Our Amazing Service!</h1>
-            <p>Your solution for all things amazing.</p>
-            <a href="#features" class="cta-button">Learn More</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features">
-        <div class="feature">
-            <h2>Feature One</h2>
-            <p>Description of feature one.</p>
-        </div>
-        <div class="feature">
-            <h2>Feature Two</h2>
-            <p>Description of feature two.</p>
-        </div>
-        <div class="feature">
-            <h2>Feature Three</h2>
-            <p>Description of feature three.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us for more information.</p>
-        <a href="mailto:contact@ourservice.com" class="cta-button">Email Us</a>
-    </section>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <h1>Quizer</h1>
+   <a href="/homepage/index.html"><h1>Tap me to go to my website</h1></a>
 </body>
 </html>
