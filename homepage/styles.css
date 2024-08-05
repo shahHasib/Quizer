@@ -323,11 +323,14 @@ footer {
 
 .footer-social a {
   margin: 20 10px;
+  
 }
 
 .footer-social img {
   height: 30px;
+  max-width: 33px;
   border-radius: 50%;
+  
 }
 .footer-bottom {
   border-top: 1px solid white;
