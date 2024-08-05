@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let timer;
     let isPaused = false;
 
-    async function fetchTriviaQuestions(category = 18, difficulty = 'easy', amount = 10) {
+    async function fetchTriviaQuestions(category, level, amount = 10) {
         loader.style.display = 'flex'; // Show the loader
-        const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`;
+        const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${level}&type=multiple`;
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -175,5 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '../homepage/index.html'; 
     });
 
-    fetchTriviaQuestions(); 
+
+
+
+    function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            category: params.get('category'),
+            grade: params.get('grade'),
+            level: params.get('level'),
+            type: params.get('type')
+        };
+    }
+
+    const { category, grade, level, type } = getQueryParams();
+
+   
+    
+
+
+    fetchTriviaQuestions(category, level, grade, type); 
 });
