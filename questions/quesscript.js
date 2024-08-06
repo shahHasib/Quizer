@@ -85,15 +85,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Highlight buttons based on correctness
         document.querySelectorAll('.option').forEach(btn => {
             if (btn.textContent === correctAnswer) {
-                btn.style.backgroundColor = 'lightgreen'; // Green for correct answer
+                btn.style.backgroundColor = 'green'; // Green for correct answer
             } else if (btn.textContent === selectedOption) {
-                btn.style.backgroundColor = 'salmon'; // Red for incorrect answer
+                btn.style.backgroundColor = 'red'; // Red for incorrect answer
             }
         });
 
-        // Check if the selected option is correct and update the score
+        
         if (selectedOption === correctAnswer) {
-            score++;
+            score=score+10;
             scoreElement.textContent = score;
         }
 
@@ -151,11 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
         nameModal.style.display = 'none';
     });
 
-    window.addEventListener('click', (event) => {
-        if (event.target === nameModal) {
-            nameModal.style.display = 'none'; 
-        }
-    });
+    // window.addEventListener('click', (event) => {
+    //     if (event.target === nameModal) {
+    //         nameModal.style.display = 'none'; 
+    //     }
+    // });
 
     pauseButton.addEventListener('click', () => {
         isPaused = !isPaused;
@@ -189,10 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const { category, grade, level, type } = getQueryParams();
-
-   
-    
-
 
     fetchTriviaQuestions(category, level, grade, type); 
 });

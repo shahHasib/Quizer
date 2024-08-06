@@ -27,22 +27,22 @@ body {
     margin-bottom: 10px;
 }
 
-button {
+#quiz-page button,#play-now {
     display: block;
     width: 100%;
     padding: 10px;
     margin: 5px 0;
     border: none;
     border-radius: 5px;
-    background-color: rgb(223, 87, 38);
+    background-color: rgb(30, 26, 25);
     color: #fff;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: rgb(223, 87, 38);
+#quiz-page button:hover {
+    background-color: rgb(124, 108, 102);
 }
 
 button.correct {
@@ -50,7 +50,7 @@ button.correct {
 }
 
 button.wrong {
-    background-color: #dc3545;
+    background-color: red;
 }
 
 #timer {
@@ -127,7 +127,7 @@ button.wrong {
     cursor: pointer;
 }
 
-input[type="text"] {
+#username {
     padding: 10px;
     font-size: 16px;
     margin: 10px 0;
@@ -136,7 +136,7 @@ input[type="text"] {
     border-radius: 5px;
 }
 
-button {
+#submit-score {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
