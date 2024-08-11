@@ -15,14 +15,7 @@
         <div id="start-page">
             <button id="play-now">Questions are not loaded please refresh or choose other Content</button>
         </div>
-        <select id="languageSelect">
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
-            <!-- Add more languages as needed -->
-        </select>
-        <button onclick="translatePage()">Translate</button>
-
+        
         <div id="quiz-page" style="display:none;">
             
             <div id="question-container">
@@ -41,10 +34,12 @@
             <!-- Modal -->
             <div id="name-modal" class="modal">
                 <div class="modal-content">
+                    <form action="./save_score.php" method="post">
                     <span class="close">&times;</span>
                     <h2>Enter Your Name</h2>
-                    <input type="text" id="username" placeholder="Enter your name" />
-                    <button id="submit-score">Submit Score</button>
+                    <input type="text" id="username" placeholder="Enter your name" name="user" />
+                    <button id="submit-score" type="submit">Submit Score</button>
+                    </form>
                 </div>
             </div>
             <div id="leaderboard">

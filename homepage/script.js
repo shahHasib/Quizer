@@ -4,6 +4,13 @@ var bar2=document.querySelector(".bar2");
 var bar3=document.querySelector(".bar3");
 var menu=document.querySelector(".links")
 var color=document.querySelector("#color");
+var container=document.querySelector('.cards');
+var leaderboardbtn=document.querySelector('.btnLeaderboard');
+var leaderboard=document.querySelector('#ld');
+var btnquiz=document.querySelector(".btnQuizzes");
+
+
+
 hamberger.addEventListener('click',()=>{
     menu.classList.toggle("active");
   bar1.classList.toggle("bar-1");
@@ -15,6 +22,7 @@ color.addEventListener('change',(e)=>{
 if(e.target.value=="red"){
  document.documentElement.style.setProperty('--main-color','red');
 }
+
 if(e.target.value=="blue"){
   document.documentElement.style.setProperty('--main-color','blue');
  }
@@ -34,6 +42,18 @@ if(e.target.value=="blue"){
 
 })
 
+leaderboardbtn.addEventListener('click',function(){
+ // alert(0)
+  container.style="display:none";
+  leaderboard.style="display:block";
+})
+
+btnquiz.addEventListener('click',function(){
+  // alert(0)
+   container.style="display:flex";
+   leaderboard.style="display:none";
+ })
+
 // Sabhi buttons jinke class 'btnPlay' hai unko select karo
 document.querySelectorAll('.btnPlay').forEach(button => {
   // Button click hone par yeh function execute hoga
@@ -48,7 +68,7 @@ document.querySelectorAll('.btnPlay').forEach(button => {
       const type = 'multiple'; // Default value, agar specific type chahiye to yeh change kar sakte hain
       
       // Query parameters ke saath question.html page pe redirect karo
-      window.location.href = `../questions/question.html?category=${encodeURIComponent(category)}&grade=${encodeURIComponent(grade)}&level=${encodeURIComponent(level)}&type=${encodeURIComponent(type)}`;
+      window.location.href = `../questions/question.php?category=${encodeURIComponent(category)}&grade=${encodeURIComponent(grade)}&level=${encodeURIComponent(level)}&type=${encodeURIComponent(type)}`;
   });
 });
 

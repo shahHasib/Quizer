@@ -16,6 +16,7 @@ header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    
 }
 
 nav {
@@ -23,14 +24,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
-    margin: 0 auto;
-    padding: 0 20px;
+    max-height: 100px;
+    line-height: 1;
+    margin:  auto;
+    padding: auto 20px;
 }
 
 .userprofile {
     display: flex;
     align-items: center;
+    margin-left: 15px;
 }
 
 .userImage {
@@ -41,7 +44,7 @@ nav {
 
 .userName {
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 1.8em;
 }
 
 .links {
@@ -99,11 +102,11 @@ nav {
 }
 
 .contact-form button {
-    background-color: #007bff;
+    background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -140,15 +143,14 @@ nav {
     margin: 5px 0;
    
 }
-.footer-social a {
-    margin: 5px 0;
-    border-radius: 50%;
-}
+
 
 .footer-social img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+    margin: 5px 0;
+    border-radius: 50%;
+    background-color: white;
 }
 
 .footer-bottom {

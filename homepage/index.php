@@ -24,8 +24,8 @@
         <!-- </div>
         <div class="colors"> -->
         <span class="colorName">Color :</span> <select name="color" id="color">
-          <option value="defualt" selected>Defult</option>
-          <option value="red">Red</option>
+         
+          <option value="red" selected>Red</option>
           <option value="blue">Blue</option>
           <option value="green">Green</option>
           <option value="black">black</option>
@@ -1175,6 +1175,12 @@
   </div>
 </div>
 
+
+</div>
+<div id="ld" style="display:none;">
+  <?php
+  include("../questions/leaderboard.php");
+  ?>
 </div>
 <footer>
   <div class="footer-container">

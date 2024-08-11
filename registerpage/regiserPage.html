@@ -13,7 +13,7 @@
           <img src="../resources/logo.png" alt="image" class="userImage" />
           <p class="userName">Quizer</p>
         </div>
-        
+
         <div class="colors">
           <span class="colorName">Color :</span>
           <select name="color" id="color">
@@ -27,7 +27,9 @@
           </select>
         </div>
         <div class="links">
-          <a href="../homepage/index.html" id="home"><img src="../resources/home.png" alt=""></a>
+          <a href="../homepage/index.html" id="home"
+            ><img src="../resources/home.png" alt=""
+          /></a>
         </div>
       </nav>
     </header>
@@ -39,22 +41,53 @@
             id="login-form"
             class="form"
             action="login_process.php"
-            method="POST">
-
+            method="POST"
+          >
             <h2>Login</h2>
-            <input type="text" id="login-username" placeholder="Username" name="username" />
+            <input
+              type="text"
+              id="login-username"
+              placeholder="Username"
+              name="username"
+            />
 
-            <input type="password" id="login-password" placeholder="Password" name="password"/>
+            <input
+              type="password"
+              id="login-password"
+              placeholder="Password"
+              name="password"
+            />
 
-            <input type="submit" value="Login"/>
+            <input type="submit" value="Login" />
           </form>
-          <form id="register-form" class="form" action="register_process.php" method="POST" onsubmit="return regValidation()">
+          <form
+            id="register-form"
+            class="form"
+            action="register_process.php"
+            method="POST"
+            onsubmit="return regValidation()"
+          >
             <h2>Register</h2>
-            <input type="text" id="username" placeholder="Username" name="username" />
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              name="username"
+            />
             <input type="email" id="email" placeholder="Email" name="email" />
-            <input type="password" id="password" placeholder="Password" name="password"/>
-            <input type="password" id="cpassword" placeholder="confirm Password" name="confirm_password"/>
-            <input type="submit" id="btnSubmit" value="Register"/>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              name="password"
+            />
+            <input
+              type="password"
+              id="cpassword"
+              placeholder="confirm Password"
+              name="confirm_password"
+            />
+            <input type="submit" id="btnSubmit" value="Register" />
           </form>
         </div>
       </div>
@@ -66,23 +99,23 @@
     </div>
     <div class="err">
       <div class="errLine">
-        <img src="" alt="" class="errImage1">
+        <img src="" alt="" class="errImage1" />
         <span class="errText-1"></span>
       </div>
       <div class="errLine">
-        <img src="" alt="" class="errImage2">
+        <img src="" alt="" class="errImage2" />
         <span class="errText-2"></span>
       </div>
       <div class="errLine">
-        <img src="" alt="" class="errImage3">
+        <img src="" alt="" class="errImage3" />
         <span class="errText-3"></span>
       </div>
       <div class="errLine">
-        <img src="" alt="" class="errImage4">
+        <img src="" alt="" class="errImage4" />
         <span class="errText-4"></span>
       </div>
       <div class="errLine">
-        <img src="" alt="" class="errImage5">
+        <img src="" alt="" class="errImage5" />
         <span class="errText-5"></span>
       </div>
     </div>

@@ -1,5 +1,5 @@
 :root {
-  --main-color: rgb(223, 87, 38);
+  --main-color: red;
   
 }
 @property --angle{
@@ -15,6 +15,7 @@
   padding: 0;
   box-sizing: border-box;
   font-variant: unset;
+  
 
 }
 
@@ -27,6 +28,7 @@ body {
   align-items: center;
   background-color: white;
   margin: 0 10px;
+  position: relative;
   box-shadow: 0px 0px 40px var(--main-color);
 }
 ::-webkit-scrollbar-button{
@@ -112,6 +114,7 @@ nav .userImage {
   width: 100%;
   padding: 150px 0 0px 0;
   color: black;
+ 
 }
 
 .container h1 {

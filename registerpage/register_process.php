@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $username, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        header("Location: ../homepage/index.html");
+        header("Location: ../homepage/index.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
