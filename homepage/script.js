@@ -68,7 +68,7 @@ document.querySelectorAll('.btnPlay').forEach(button => {
       const type = 'multiple'; // Default value, agar specific type chahiye to yeh change kar sakte hain
       
       // Query parameters ke saath question.html page pe redirect karo
-      window.location.href = `../questions/question.php?category=${encodeURIComponent(category)}&grade=${encodeURIComponent(grade)}&level=${encodeURIComponent(level)}&type=${encodeURIComponent(type)}`;
+      window.location.href = `../questions/question.html?category=${encodeURIComponent(category)}&grade=${encodeURIComponent(grade)}&level=${encodeURIComponent(level)}&type=${encodeURIComponent(type)}`;
   });
 });
 

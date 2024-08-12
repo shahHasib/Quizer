@@ -1,31 +1,35 @@
 <?php
 include('../registerpage/db_connection.php'); // Ensure this path is correct
 
-// Check if POST variables are set
-if (isset($_POST['user']) && isset($_POST['score'])) {
-    $user = $_POST['user'];
-    //$score = $_POST['score'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username']);
+    $score = $_POST['score'];
 
-    // Prepare and execute SQL query
-    $sql = "INSERT INTO leaderboard (username) VALUES (?)";
-    $stmt = $conn->prepare($sql);
-    if ($stmt) {
-        $stmt->bind_param("s", $user);
-        $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            echo "Score saved successfully.";
-        } else {
-            echo "Error saving score.";
-        }
-
-        $stmt->close();
-    } else {
-        echo "Error preparing statement.";
+    // Validate input
+    if (empty($username) || !is_numeric($score)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid input']);
+        exit;
     }
-} else {
-    echo "User and score are required.";
-}
 
-$conn->close();
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO leaderboard (username, score) VALUES (?, ?)");
+    if ($stmt === false) {
+        error_log("Error preparing statement: " . $conn->error);
+        echo json_encode(['success' => false, 'message' => 'Database error']);
+        exit;
+    }
+    $stmt->bind_param("si", $username, $score);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo json_encode(['success' => true]);
+    } else {
+        error_log("Error executing statement: " . $stmt->error);
+        echo json_encode(['success' => false, 'message' => 'Database error']);
+    }
+
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
+}
 ?>

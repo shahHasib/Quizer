@@ -21,7 +21,7 @@ $result = $conn->query($sql);
             color: #333;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
             overflow: hidden;
             padding: 20px;

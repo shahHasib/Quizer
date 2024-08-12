@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = document.getElementById('options');
     const loader = document.getElementById('loader');
     const scoreElement = document.getElementById('score');
-    const music="../resources/play.mp3";
+    const music = new Audio("../resources/play.mp3");
 
     let questions = [];
     let currentQuestionIndex = 0;
@@ -91,9 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        
         if (selectedOption === correctAnswer) {
-            score=score+10;
+            score += 10;
             scoreElement.textContent = score;
         }
 
@@ -130,18 +129,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function submitScore(username, score) {
+        try {
+            const response = await fetch('save_score.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    username: username,
+                    score: score
+                })
+            });
+            const result = await response.json();
+            if (result.success) {
+                addScoreToLeaderboard(username, score);
+                nameModal.style.display = 'none'; // Hide the modal
+                usernameInput.value = ''; // Clear the input field
+            } else {
+                alert(result.message);
+            }
+        } catch (error) {
+            console.error('Error submitting score:', error);
+        }
+    }
+
     function addScoreToLeaderboard(username, score) {
         const listItem = document.createElement('li');
         listItem.textContent = `${username}: ${score}`;
         leaderboardList.appendChild(listItem);
     }
 
+    async function loadLeaderboard() {
+        try {
+            const response = await fetch('./leaderboard.php');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            if (Array.isArray(data)) {
+                leaderboardList.innerHTML = ''; // Clear previous leaderboard
+                data.forEach(entry => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${entry.username}: ${entry.score}`;
+                    leaderboardList.appendChild(listItem);
+                });
+            } else {
+                console.error('Unexpected data format:', data);
+            }
+        } catch (error) {
+            console.error('Error fetching leaderboard:', error);
+        }
+    }
+
     submitScoreButton.addEventListener('click', () => {
         const username = usernameInput.value.trim();
         if (username) {
-            addScoreToLeaderboard(username, score);
-            nameModal.style.display = 'none'; // Hide the modal
-            usernameInput.value = ''; // Clear the input field
+            submitScore(username, score);
         } else {
             alert('Please enter your name!');
         }
@@ -150,12 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal.addEventListener('click', () => {
         nameModal.style.display = 'none';
     });
-
-    // window.addEventListener('click', (event) => {
-    //     if (event.target === nameModal) {
-    //         nameModal.style.display = 'none'; 
-    //     }
-    // });
 
     pauseButton.addEventListener('click', () => {
         isPaused = !isPaused;
@@ -175,9 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = '../homepage/index.html'; 
     });
 
-
-
-
     function getQueryParams() {
         const params = new URLSearchParams(window.location.search);
         return {
@@ -190,5 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const { category, grade, level, type } = getQueryParams();
 
-    fetchTriviaQuestions(category, level, grade, type); 
+    fetchTriviaQuestions(category, level, grade, type);
+
+    // Optionally, load the leaderboard when the page loads
+    loadLeaderboard();
 });
