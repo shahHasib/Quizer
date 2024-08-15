@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.querySelector('.close');
     const submitScoreButton = document.getElementById('submit-score');
     const usernameInput = document.getElementById('username');
-    const finalScoreElement = document.getElementById('final-score');
-    const leaderboardList = document.getElementById('leaderboard-list');
     const pauseButton = document.getElementById('pause-button');
     const restartButton = document.getElementById('restart-button');
     const backButton = document.getElementById('back-button');
@@ -16,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const scoreElement = document.getElementById('score');
     const music = new Audio("../resources/play.mp3");
+    const sc=document.querySelector('#final-score');
 
     let questions = [];
     let currentQuestionIndex = 0;
@@ -72,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const button = document.createElement('button');
             button.textContent = option;
             button.classList.add('option');
-            button.addEventListener('click', () => handleOptionClick(button, option));
+            button.addEventListener('click', () => handleOptionClick(option));
             options.appendChild(button);
         });
 
         startTimer();
     }
 
-    function handleOptionClick(button, selectedOption) {
+    function handleOptionClick(selectedOption) {
         const correctAnswer = questions[currentQuestionIndex].correct_answer;
 
         // Highlight buttons based on correctness
@@ -152,12 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function addScoreToLeaderboard(username, score) {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${username}: ${score}`;
-        leaderboardList.appendChild(listItem);
-    }
-
+   
     async function loadLeaderboard() {
         try {
             const response = await fetch('./leaderboard.php');
@@ -183,9 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
     submitScoreButton.addEventListener('click', () => {
         const username = usernameInput.value.trim();
         if (username) {
-            submitScore(username, score);
+           // submitScore(username, score);
         } else {
             alert('Please enter your name!');
+            return false;
         }
     });
 
@@ -208,8 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backButton.addEventListener('click', () => {
-        window.location.href = '../homepage/index.html'; 
+        window.location.href = '../homepage/index.php'; 
     });
+
+     sc.value=scoreElement;
 
     function getQueryParams() {
         const params = new URLSearchParams(window.location.search);
@@ -221,10 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    const { category, grade, level, type } = getQueryParams();
+    const { category, grade, level} = getQueryParams();
 
-    fetchTriviaQuestions(category, level, grade, type);
-
-    // Optionally, load the leaderboard when the page loads
-    loadLeaderboard();
+    fetchTriviaQuestions(category, level, grade);
 });

@@ -2,7 +2,7 @@
 include('../registerpage/db_connection.php'); // Ensure this path is correct
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username']);
+    $username = trim($_POST['user']);
     $score = $_POST['score'];
 
     // Validate input
@@ -22,13 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo json_encode(['success' => true]);
-    } else {
-        error_log("Error executing statement: " . $stmt->error);
-        echo json_encode(['success' => false, 'message' => 'Database error']);
+        header("Location: ../homepage/index.php");
+    } 
+    else{
+        
     }
 
-    // Close statement and connection
+    
     $stmt->close();
     $conn->close();
 }

@@ -9,7 +9,7 @@
 <body>
     <header>
     
-        <h1>Quiz Game</h1>
+        <?php include('../partials/header.html'); ?>
     </header>
     <div class="container">
         <div id="start-page">
@@ -29,22 +29,19 @@
             <div id="scoreboard">Score: <span id="score">0</span></div>
         </div>
         <div id="end-page" style="display:none;">
-            <h2>Quiz Finished!</h2>
-            <p>Your score is <span id="final-score">0</span></p>
+           
             <!-- Modal -->
             <div id="name-modal" class="modal">
                 <div class="modal-content">
                     <form action="./save_score.php" method="post">
                     <span class="close">&times;</span>
                     <h2>Enter Your Name</h2>
+                    <h2>Quiz Finished!</h2>
+                    <p>Your score is <input type="text" id="final-score" name="score" value="" disabled/></p>
                     <input type="text" id="username" placeholder="Enter your name" name="user" />
                     <button id="submit-score" type="submit">Submit Score</button>
                     </form>
                 </div>
-            </div>
-            <div id="leaderboard">
-                <h3>Leaderboard</h3>
-                <ul id="leaderboard-list"></ul>
             </div>
         </div>
         <!-- Loader -->
@@ -54,5 +51,16 @@
         </div>
     </div>
     <script src="quesscript.js" defer></script>
+    <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en', // Change 'en' to the default language of your website
+      includedLanguages: 'en,hi,gu,ur,ar', // List of languages you want to include (comma-separated)
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="google_translate_element"></div>
 </body>
 </html>

@@ -56,19 +56,17 @@ btnquiz.addEventListener('click',function(){
 
 // Sabhi buttons jinke class 'btnPlay' hai unko select karo
 document.querySelectorAll('.btnPlay').forEach(button => {
-  // Button click hone par yeh function execute hoga
+  
   button.addEventListener('click', function() {
-      // Button ke nearest parent element ko select karo jo class 'card' ka ho
+     
       const card = this.closest('.card');
       
       // Card se category, grade aur level ko retrieve karo
       const category = card.getAttribute('data-category');
       const grade = card.getAttribute('data-grade');
       const level = card.getAttribute('data-level');
-      const type = 'multiple'; // Default value, agar specific type chahiye to yeh change kar sakte hain
-      
-      // Query parameters ke saath question.html page pe redirect karo
-      window.location.href = `../questions/question.html?category=${encodeURIComponent(category)}&grade=${encodeURIComponent(grade)}&level=${encodeURIComponent(level)}&type=${encodeURIComponent(type)}`;
+    
+      window.location.href = `../questions/question.php?category=${encodeURIComponent(category)}&grade=${encodeURIComponent(grade)}&level=${encodeURIComponent(level)}`;
   });
 });
 
