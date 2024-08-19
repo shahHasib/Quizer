@@ -36,8 +36,7 @@
                     <form action="./save_score.php" method="post">
                     <span class="close">&times;</span>
                     <h2>Enter Your Name</h2>
-                    <h2>Quiz Finished!</h2>
-                    <p>Your score is <input type="text" id="final-score" name="score" value="" disabled/></p>
+                    Your score is :<p id="final-score"></p>
                     <input type="text" id="username" placeholder="Enter your name" name="user" />
                     <button id="submit-score" type="submit">Submit Score</button>
                     </form>

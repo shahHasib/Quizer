@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.querySelector('.close');
     const submitScoreButton = document.getElementById('submit-score');
     const usernameInput = document.getElementById('username');
+    const finalScoreElement = document.getElementById('final-score');
+    const leaderboardList = document.getElementById('leaderboard-list');
     const pauseButton = document.getElementById('pause-button');
     const restartButton = document.getElementById('restart-button');
     const backButton = document.getElementById('back-button');
@@ -14,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const scoreElement = document.getElementById('score');
     const music = new Audio("../resources/play.mp3");
-    const sc=document.querySelector('#final-score');
 
     let questions = [];
     let currentQuestionIndex = 0;
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Quiz finished
             quizPage.style.display = 'none';
             endPage.style.display = 'block';
-            finalScoreElement.textContent = score;
+            finalScoreElement.value = score;
             nameModal.style.display = 'block'; // Show the modal for name entry
             return;
         }
@@ -71,14 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const button = document.createElement('button');
             button.textContent = option;
             button.classList.add('option');
-            button.addEventListener('click', () => handleOptionClick(option));
+            button.addEventListener('click', () => handleOptionClick(button, option));
             options.appendChild(button);
         });
 
         startTimer();
     }
 
-    function handleOptionClick(selectedOption) {
+    function handleOptionClick(button, selectedOption) {
         const correctAnswer = questions[currentQuestionIndex].correct_answer;
 
         // Highlight buttons based on correctness
@@ -151,36 +152,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-   
-    async function loadLeaderboard() {
-        try {
-            const response = await fetch('./leaderboard.php');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            if (Array.isArray(data)) {
-                leaderboardList.innerHTML = ''; // Clear previous leaderboard
-                data.forEach(entry => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${entry.username}: ${entry.score}`;
-                    leaderboardList.appendChild(listItem);
-                });
-            } else {
-                console.error('Unexpected data format:', data);
-            }
-        } catch (error) {
-            console.error('Error fetching leaderboard:', error);
-        }
+    function addScoreToLeaderboard(username, score) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${username}: ${score}`;
+        leaderboardList.appendChild(listItem);
     }
+
+    
 
     submitScoreButton.addEventListener('click', () => {
         const username = usernameInput.value.trim();
         if (username) {
-           // submitScore(username, score);
+            submitScore(username, score);
         } else {
             alert('Please enter your name!');
-            return false;
         }
     });
 
@@ -203,10 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backButton.addEventListener('click', () => {
-        window.location.href = '../homepage/index.php'; 
+        window.location.href = '../homepage/index.html'; 
     });
-
-     sc.value=scoreElement;
 
     function getQueryParams() {
         const params = new URLSearchParams(window.location.search);
@@ -218,7 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    const { category, grade, level} = getQueryParams();
+    const { category, grade, level } = getQueryParams();
 
     fetchTriviaQuestions(category, level, grade);
+
+   
 });

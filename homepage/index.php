@@ -8,7 +8,7 @@
   <title>DemoTitle</title>
 </head>
 
-<body>
+<body id="home">
   <header>
     <nav>
       <div class="userprofile">
@@ -16,22 +16,22 @@
         <p class="userName">Quizer</p>
       </div>
       <div class="links">
-        <a href="#container">Home</a>
+        <a href="#home">Home</a>
+        <a href="#container">Quizes</a>
 
         <a href="../aboutus/about.html">About Us</a>
         <a href="../contacus/contac.html">Contact Us</a>
-        <a href="../registerpage/regiserPage.html">Login</a>
         <!-- </div>
         <div class="colors"> -->
-        <span class="colorName">Color :</span> <select name="color" id="color">
-         
+        <!-- <span class="colorName">Color :</span> <select name="color" id="color">
+
           <option value="red" selected>Red</option>
           <option value="blue">Blue</option>
           <option value="green">Green</option>
           <option value="black">black</option>
           <option value="gray">Gray</option>
           <option value="aqua">Aqua</option>
-        </select>
+        </select> -->
       </div>
       <div class="menu">
         <div class="bar1"></div>
@@ -41,11 +41,17 @@
     </nav>
   </header>
 
+  <div class="bg">
+  <p class="text">Great collection of <i> Quizes</i> </br> to acquire computer knowledge.</p>
+    <img src="../resources/bg.png" alt="">
+    <button onclick="window.location.href='../registerpage/register.html'">Get Started</button>
+  </div>
+
   <div class="container" id="container">
     <div class="intro">
       <div>
         <h1>Coding quizzes for kids and teens</h1>
-        <p>Great collection of quizzes to acquire computer knowledge</p>
+        
       </div>
       <div class="switchbtn">
         <button class="btnQuizzes">All Practice Quizzes</button>
@@ -287,52 +293,52 @@
           <button class="btnPlay">Play Now</button>
         </div>
       </div>
-<!-- Entertainment: Video Games -->
-<div class="card" data-category="14" data-grade="10" data-level="easy">
-  <div class="img">
-    <img src="../resources/entertainment_television.png" alt="Entertainment Television img" />
-  </div>
-  <div class="items">
-    <h2>Entertainment: Television</h2>
-    <div class="grade">
-      <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-    </div>
-    <div class="level">
-      <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
-    </div>
-    <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="14" data-grade="10" data-level="medium">
-  <div class="img">
-    <img src="../resources/entertainment_television.png" alt="Entertainment Television img" />
-  </div>
-  <div class="items">
-    <h2>Entertainment: Television</h2>
-    <div class="grade">
-      <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-    </div>
-    <div class="level">
-      <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-    </div>
-    <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="14" data-grade="10" data-level="hard">
-  <div class="img">
-    <img src="../resources/entertainment_television.png" alt="Entertainment Television img" />
-  </div>
-  <div class="items">
-    <h2>Entertainment: Television</h2>
-    <div class="grade">
-      <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-    </div>
-    <div class="level">
-      <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-    </div>
-    <button class="btnPlay">Play Now</button>
-  </div>
-</div>
+      <!-- Entertainment: Video Games -->
+      <div class="card" data-category="14" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/entertainment_television.png" alt="Entertainment Television img" />
+        </div>
+        <div class="items">
+          <h2>Entertainment: Television</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
+      </div>
+      <div class="card" data-category="14" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/entertainment_television.png" alt="Entertainment Television img" />
+        </div>
+        <div class="items">
+          <h2>Entertainment: Television</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
+      </div>
+      <div class="card" data-category="14" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/entertainment_television.png" alt="Entertainment Television img" />
+        </div>
+        <div class="items">
+          <h2>Entertainment: Television</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
+      </div>
       <!-- Entertainment: Video Games -->
       <div class="card" data-category="15" data-grade="10" data-level="easy">
         <div class="img">
@@ -427,7 +433,7 @@
         </div>
       </div>
 
-<!-- Science & Nature -->
+      <!-- Science & Nature -->
       <div class="card" data-category="17" data-grade="10" data-level="easy">
         <div class="img">
           <img src="../resources/science_nature.png" alt="Science & Nature img" />
@@ -475,285 +481,285 @@
       </div>
 
       <!-- Science: Computers -->
-<div class="card" data-category="18" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/computers.png" alt="Science: Computers img" />
-  </div>
-  <div class="items">
-      <h2>Science: Computers</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="18" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/computers.png" alt="Science: Computers img" />
+        </div>
+        <div class="items">
+          <h2>Science: Computers</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="18" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/computers.png" alt="Science: Computers img" />
+        </div>
+        <div class="items">
+          <h2>Science: Computers</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="18" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/computers.png" alt="Science: Computers img" />
-  </div>
-  <div class="items">
-      <h2>Science: Computers</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="18" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/computers.png" alt="Science: Computers img" />
+        </div>
+        <div class="items">
+          <h2>Science: Computers</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="18" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/computers.png" alt="Science: Computers img" />
-  </div>
-  <div class="items">
-      <h2>Science: Computers</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
 
 
-      
+
       <!-- Science: Mathematics -->
-<div class="card" data-category="19" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/mathematics.png" alt="Science: Mathematics img" />
-  </div>
-  <div class="items">
-      <h2>Science: Mathematics</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="19" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/mathematics.png" alt="Science: Mathematics img" />
+        </div>
+        <div class="items">
+          <h2>Science: Mathematics</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="19" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/mathematics.png" alt="Science: Mathematics img" />
+        </div>
+        <div class="items">
+          <h2>Science: Mathematics</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="19" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/mathematics.png" alt="Science: Mathematics img" />
-  </div>
-  <div class="items">
-      <h2>Science: Mathematics</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="19" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/mathematics.png" alt="Science: Mathematics img" />
+        </div>
+        <div class="items">
+          <h2>Science: Mathematics</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="19" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/mathematics.png" alt="Science: Mathematics img" />
-  </div>
-  <div class="items">
-      <h2>Science: Mathematics</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
 
-<!-- Science: Nature -->
-<div class="card" data-category="20" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/mythology.png" alt="Mythology img" />
-  </div>
-  <div class="items">
-      <h2>Mythology</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <!-- Science: Nature -->
+      <div class="card" data-category="20" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/mythology.png" alt="Mythology img" />
+        </div>
+        <div class="items">
+          <h2>Mythology</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="20" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/mythology.png" alt="Mythology img" />
+        </div>
+        <div class="items">
+          <h2>Mythology</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="20" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/mythology.png" alt="Mythology img" />
-  </div>
-  <div class="items">
-      <h2>Mythology</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="20" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/mythology.png" alt="Mythology img" />
+        </div>
+        <div class="items">
+          <h2>Mythology</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+      <!-- Science: Technology -->
+      <div class="card" data-category="21" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/sports.png" alt="Science: Technology img" />
+        </div>
+        <div class="items">
+          <h2>Sports</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="20" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/mythology.png" alt="Mythology img" />
-  </div>
-  <div class="items">
-      <h2>Mythology</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="21" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/sports.png" alt="Science: Technology img" />
+        </div>
+        <div class="items">
+          <h2>Sports</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+      <div class="card" data-category="21" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/sports.png" alt="Science: Technology img" />
+        </div>
+        <div class="items">
+          <h2>Sports</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<!-- Science: Technology -->
-<div class="card" data-category="21" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/sports.png" alt="Science: Technology img" />
-  </div>
-  <div class="items">
-      <h2>Sports</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <!-- Science: Nature -->
+      <div class="card" data-category="22" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/geography.png" alt="Science: Nature img" />
+        </div>
+        <div class="items">
+          <h2>Geography</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="22" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/geography.png" alt="Science: Nature img" />
+        </div>
+        <div class="items">
+          <h2>Geography</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="21" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/sports.png" alt="Science: Technology img" />
-  </div>
-  <div class="items">
-      <h2>Sports</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="22" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/geography.png" alt="Science: Nature img" />
+        </div>
+        <div class="items">
+          <h2>Geography</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+      <!-- Science: Biology -->
+      <div class="card" data-category="23" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/history.png" alt="Science: Biology img" />
+        </div>
+        <div class="items">
+          <h2>History</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="21" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/sports.png" alt="Science: Technology img" />
-  </div>
-  <div class="items">
-      <h2>Sports</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="23" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/history.png" alt="Science: Biology img" />
+        </div>
+        <div class="items">
+          <h2>History</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+      <div class="card" data-category="23" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/history.png" alt="Science: Biology img" />
+        </div>
+        <div class="items">
+          <h2>History</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<!-- Science: Nature -->
-<div class="card" data-category="22" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/geography.png" alt="Science: Nature img" />
-  </div>
-  <div class="items">
-      <h2>Geography</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="22" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/geography.png" alt="Science: Nature img" />
-  </div>
-  <div class="items">
-      <h2>Geography</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="22" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/geography.png" alt="Science: Nature img" />
-  </div>
-  <div class="items">
-      <h2>Geography</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<!-- Science: Biology -->
-<div class="card" data-category="23" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/history.png" alt="Science: Biology img" />
-  </div>
-  <div class="items">
-      <h2>History</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="23" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/history.png" alt="Science: Biology img" />
-  </div>
-  <div class="items">
-      <h2>History</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="23" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/history.png" alt="Science: Biology img" />
-  </div>
-  <div class="items">
-      <h2>History</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
 
       <!-- Politics -->
       <div class="card" data-category="24" data-grade="10" data-level="easy">
@@ -801,99 +807,99 @@
           <button class="btnPlay">Play Now</button>
         </div>
       </div>
-<!-- Science: Physics -->
-<div class="card" data-category="25" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/art.png" alt="Science: Physics img" />
-  </div>
-  <div class="items">
-      <h2>Art</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <!-- Science: Physics -->
+      <div class="card" data-category="25" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/art.png" alt="Science: Physics img" />
+        </div>
+        <div class="items">
+          <h2>Art</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="25" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/art.png" alt="Science: Physics img" />
+        </div>
+        <div class="items">
+          <h2>Art</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="25" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/art.png" alt="Science: Physics img" />
-  </div>
-  <div class="items">
-      <h2>Art</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="25" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/art.png" alt="Science: Physics img" />
+        </div>
+        <div class="items">
+          <h2>Art</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="25" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/art.png" alt="Science: Physics img" />
-  </div>
-  <div class="items">
-      <h2>Art</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
 
-<!-- Science: Chemistry -->
-<div class="card" data-category="26" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/celebrities.png" alt="Science: Chemistry img" />
-  </div>
-  <div class="items">
-      <h2>Celebrities</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <!-- Science: Chemistry -->
+      <div class="card" data-category="26" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/celebrities.png" alt="Science: Chemistry img" />
+        </div>
+        <div class="items">
+          <h2>Celebrities</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="26" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/celebrities.png" alt="Science: Chemistry img" />
+        </div>
+        <div class="items">
+          <h2>Celebrities</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="26" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/celebrities.png" alt="Science: Chemistry img" />
-  </div>
-  <div class="items">
-      <h2>Celebrities</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="26" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/celebrities.png" alt="Science: Chemistry img" />
+        </div>
+        <div class="items">
+          <h2>Celebrities</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="26" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/celebrities.png" alt="Science: Chemistry img" />
-  </div>
-  <div class="items">
-      <h2>Celebrities</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
 
 
       <!-- Animals -->
@@ -989,229 +995,223 @@
           <button class="btnPlay">Play Now</button>
         </div>
       </div>
-    
-<!-- Comics -->
-<div class="card" data-category="29" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/comics.png" alt="Comics img" />
-  </div>
-  <div class="items">
-      <h2>Comics</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+
+      <!-- Comics -->
+      <div class="card" data-category="29" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/comics.png" alt="Comics img" />
+        </div>
+        <div class="items">
+          <h2>Comics</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="29" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/comics.png" alt="Comics img" />
+        </div>
+        <div class="items">
+          <h2>Comics</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="29" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/comics.png" alt="Comics img" />
-  </div>
-  <div class="items">
-      <h2>Comics</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="29" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/comics.png" alt="Comics img" />
+        </div>
+        <div class="items">
+          <h2>Comics</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+      <!-- Gadgets -->
+      <div class="card" data-category="30" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/gadgets.png" alt="Gadgets img" />
+        </div>
+        <div class="items">
+          <h2>Gadgets</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="29" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/comics.png" alt="Comics img" />
-  </div>
-  <div class="items">
-      <h2>Comics</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="30" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/gadgets.png" alt="Gadgets img" />
+        </div>
+        <div class="items">
+          <h2>Gadgets</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+      <div class="card" data-category="30" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/gadgets.png" alt="Gadgets img" />
+        </div>
+        <div class="items">
+          <h2>Gadgets</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<!-- Gadgets -->
-<div class="card" data-category="30" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/gadgets.png" alt="Gadgets img" />
-  </div>
-  <div class="items">
-      <h2>Gadgets</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <!-- Japanese Anime & Manga -->
+      <div class="card" data-category="31" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/anime_manga.png" alt="Japanese Anime & Manga img" />
+        </div>
+        <div class="items">
+          <h2>Japanese Anime & Manga</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+      <div class="card" data-category="31" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/anime_manga.png" alt="Japanese Anime & Manga img" />
+        </div>
+        <div class="items">
+          <h2>Japanese Anime & Manga</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="30" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/gadgets.png" alt="Gadgets img" />
-  </div>
-  <div class="items">
-      <h2>Gadgets</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="31" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/anime_manga.png" alt="Japanese Anime & Manga img" />
+        </div>
+        <div class="items">
+          <h2>Japanese Anime & Manga</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+      <!-- Cartoons & Animations -->
+      <div class="card" data-category="32" data-grade="10" data-level="easy">
+        <div class="img">
+          <img src="../resources/cartoons_animations.png" alt="Cartoons & Animations img" />
+        </div>
+        <div class="items">
+          <h2>Cartoons & Animations</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="30" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/gadgets.png" alt="Gadgets img" />
-  </div>
-  <div class="items">
-      <h2>Gadgets</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+      <div class="card" data-category="32" data-grade="10" data-level="medium">
+        <div class="img">
+          <img src="../resources/cartoons_animations.png" alt="Cartoons & Animations img" />
+        </div>
+        <div class="items">
+          <h2>Cartoons & Animations</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+      <div class="card" data-category="32" data-grade="10" data-level="hard">
+        <div class="img">
+          <img src="../resources/cartoons_animations.png" alt="Cartoons & Animations img" />
+        </div>
+        <div class="items">
+          <h2>Cartoons & Animations</h2>
+          <div class="grade">
+            <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
+          </div>
+          <div class="level">
+            <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
+          </div>
+          <button class="btnPlay">Play Now</button>
+        </div>
       </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<!-- Japanese Anime & Manga -->
-<div class="card" data-category="31" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/anime_manga.png" alt="Japanese Anime & Manga img" />
-  </div>
-  <div class="items">
-      <h2>Japanese Anime & Manga</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="31" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/anime_manga.png" alt="Japanese Anime & Manga img" />
-  </div>
-  <div class="items">
-      <h2>Japanese Anime & Manga</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="31" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/anime_manga.png" alt="Japanese Anime & Manga img" />
-  </div>
-  <div class="items">
-      <h2>Japanese Anime & Manga</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<!-- Cartoons & Animations -->
-<div class="card" data-category="32" data-grade="10" data-level="easy">
-  <div class="img">
-      <img src="../resources/cartoons_animations.png" alt="Cartoons & Animations img" />
-  </div>
-  <div class="items">
-      <h2>Cartoons & Animations</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Beginner Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="32" data-grade="10" data-level="medium">
-  <div class="img">
-      <img src="../resources/cartoons_animations.png" alt="Cartoons & Animations img" />
-  </div>
-  <div class="items">
-      <h2>Cartoons & Animations</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Medium Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
-<div class="card" data-category="32" data-grade="10" data-level="hard">
-  <div class="img">
-      <img src="../resources/cartoons_animations.png" alt="Cartoons & Animations img" />
-  </div>
-  <div class="items">
-      <h2>Cartoons & Animations</h2>
-      <div class="grade">
-          <img src="../resources/icons8-graduation-48.png" alt="Grade" /><span>Grade: 10</span>
-      </div>
-      <div class="level">
-          <img src="../resources/icons8-levels-32.png" alt="Level" /><span>Hard Level</span>
-      </div>
-      <button class="btnPlay">Play Now</button>
-  </div>
-</div>
 
 
-</div>
-<div id="ld" style="display:none;">
-  <?php
+    </div>
+    <div id="ld" style="display:none;">
+      <?php
   include("../questions/leaderboard.php");
   ?>
-</div>
-<footer>
-  <div class="footer-container">
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#container">Home</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">About Us</a></li>
-        <li><a href="">Contact Us</a></li>
-      </ul>
     </div>
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <p>Email: info@quizer.com</p>
-      <p>Phone: +123 456 7890</p>
-      <p>Address: 123 Quiz St, Knowledge City</p>
-    </div>
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <a href="https://www.facebook.com/"><img src="../resources/facebook_icon.png" alt="Facebook"></a>
-      <a href="https://www.twitter.com/"><img src="../resources/twitter_icon.png" alt="Twitter"></a>
-      <a href="https://www.instagram.com/"><img src="../resources/instagram_icon.png" alt="Instagram"></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2024 Quizer. All Rights Reserved.</p>
-  </div>
-</footer>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="../registerpage/register.html">Login</a></li>
+            <li><a href="../aboutus/about.html">About Us</a></li>
+            <li><a href="../contacus/conatc.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Us</h3></br>
+          <a href="https://www.facebook.com/"><img src="../resources/facebook_icon.png" alt="Facebook"></a>
+          <a href="https://www.twitter.com/"><img src="../resources/twitter_icon.png" alt="Twitter"></a>
+          <a href="https://www.instagram.com/"><img src="../resources/instagram_icon.png" alt="Instagram"></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Quizer. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 
 </body>

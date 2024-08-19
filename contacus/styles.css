@@ -15,25 +15,21 @@ a{
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    
+    padding: 0px 30px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    max-height: 100px;
-    line-height: 1;
-    margin:  auto;
-    padding: auto 20px;
+    width: 100%;
+    max-height: 80px;
+   
 }
 
 .userprofile {
     display: flex;
     align-items: center;
-    margin-left: 15px;
 }
 
 .userImage {
@@ -42,10 +38,11 @@ nav {
     border-radius: 50%;
 }
 
-.userName {
+.userprofile .userName {
     margin-left: 10px;
-    font-size: 1.8em;
+    font-size: 25pt;
 }
+
 
 .links {
     display: flex;
@@ -75,12 +72,12 @@ nav {
 
 
 .contact-form {
-   width: 80vw;
-    margin: 10px auto;
+    max-width: 60vw;
+    margin: 30px auto;
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px cyan,-1px -1px 2px cyan;
 }
 
 .contact-form .form-group {

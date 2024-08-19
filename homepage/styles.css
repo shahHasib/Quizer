@@ -1,5 +1,5 @@
 :root {
-  --main-color: red;
+  --main-color:black;
   
 }
 @property --angle{
@@ -10,13 +10,11 @@
 }
 
 * {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-variant: unset;
-  
-
 }
 
 body {
@@ -26,17 +24,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  margin: 0 10px;
-  position: relative;
-  box-shadow: 0px 0px 40px var(--main-color);
+  padding: 0;
+  margin: 0;
 }
-::-webkit-scrollbar-button{
- 
- background-color: var(--main-color);
-}
-
-
 select {
  display: flex;
   border: none;
@@ -44,34 +34,28 @@ select {
   color: white;
   font-size: 20px;
 }
-
 option {
   background-color: var(--main-color);
   font-variant: small-caps;
   padding: 5px 20px;
   text-align: center;
   border: 2px solid white;
-
 }
-
 header {
-  width: 100%;
+  width: 100%;  
 }
 
 body header nav {
-  height: 80px;
-  background-color: var(--main-color);
+  height: 100px;
+  position: absolute;
+  background-color: transparent;
   color: #ffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
-  width: 98.7%;
-  position: fixed;
+  width: 100%;
   z-index: 1000;
-
 }
-
 nav div {
   display: flex;
   justify-content: space-around;
@@ -79,7 +63,6 @@ nav div {
   padding: 5px;
   margin: auto auto;
 }
-
 nav a {
   text-decoration: none;
   color: white;
@@ -104,28 +87,54 @@ nav .userImage {
   background-size: cover;
   border: 1px solid white;
 }
+.bg img{
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.text{
+  font-size: 20pt;
+  position: absolute;
+  top: 40%;
+  right: 4%;
+  font-weight: 500;
+  z-index: 2000;
+  color: white;
+}
+body .bg button{
+  position: absolute;
+  bottom: 300px;
+  right: 22%;
+  color: white;
+  padding: 8px 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  z-index: 100;
+  background-color: transparent;
+}
+body .bg button:hover{
+  background-color: #fff;
+  color: black;
+}
 
 .container {
+  top: 110vh;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin:50px auto;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 150px 0 0px 0;
   color: black;
- 
+ margin: 100px;
 }
 
-.container h1 {
-  font-size: 28px;
-  padding: 32px 0px 32px;
-}
-
-.container p {
-  font-size: 15pt;
-  padding: 0px 0px 40px;
-}
 
 .container .switchbtn {
   display: flex;
@@ -157,16 +166,17 @@ nav .userImage {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 100px;
   color: black;
   margin: 20px;
 }
 
 .card {
   background-color: white;
-  box-shadow: 0 4px 15px var(--main-color);
+  box-shadow: 1px 1px 2px var(--main-color),-1px -1px 2px var(--main-color);
   margin: 20px;
   border-radius: 8px;
-  
+  overflow: hidden;
   outline: none;
   width: 300px;
   
@@ -300,32 +310,38 @@ footer {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 0px;
+  padding: 50px;
+  max-height: fit-content;
 }
 
 .footer-links,
-.footer-contact,
 .footer-social {
   margin: 10px;
 }
 
 .footer-links ul {
   list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 0;
 }
 
 .footer-links ul li {
-  margin: 5px 0;
+  margin: 10px;
 }
-
+.footer-links ul li:hover{
+  border-bottom: 2px solid white;
+}
 .footer-links a,
 .footer-social a {
   color: white;
   text-decoration: none;
+  
 }
 
 .footer-social a {
-  margin: 20 10px;
+  margin: 20px 5px;
   
 }
 

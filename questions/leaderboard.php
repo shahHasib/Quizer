@@ -24,7 +24,7 @@ $result = $conn->query($sql);
             width: 100%;
             margin: auto;
             overflow: hidden;
-            padding: 20px;
+            padding: 0px;
         }
         header {
             background: #333;
@@ -35,11 +35,12 @@ $result = $conn->query($sql);
         }
         table {
             width: 100%;
-            margin: 20px 0;
+            margin: 20px auto;
             border-collapse: collapse;
         }
         th, td {
-            padding: 10px;
+            padding:10px 30px;
+            width: 100%;
             text-align: center;
             border: 1px solid #ddd;
         }

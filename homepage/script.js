@@ -46,12 +46,16 @@ leaderboardbtn.addEventListener('click',function(){
  // alert(0)
   container.style="display:none";
   leaderboard.style="display:block";
+  btnquiz.style="border-bottom:none";
+  leaderboardbtn.style="border-bottom:2px solid";
 })
 
 btnquiz.addEventListener('click',function(){
-  // alert(0)
+  
    container.style="display:flex";
    leaderboard.style="display:none";
+   btnquiz.style="border-bottom:2px solid";
+   leaderboardbtn.style="border-bottom:none";
  })
 
 // Sabhi buttons jinke class 'btnPlay' hai unko select karo

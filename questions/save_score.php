@@ -1,12 +1,19 @@
 <?php
 include('../registerpage/db_connection.php'); // Ensure this path is correct
 
+$dom = new DOMDocument();
+@$dom->loadHTMLFile('./question.php'); // Suppress warnings due to malformed HTML
+
+// Find the input element by its ID
+$inputElement = $dom->getElementById('final-score');
+$inputValue = $inputElement->getAttribute('value');
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['user']);
-    $score = $_POST['score'];
+    $score = $inputValue;
 
-    // Validate input
-    if (empty($username) || !is_numeric($score)) {
+    if (empty($username)) {
         echo json_encode(['success' => false, 'message' => 'Invalid input']);
         exit;
     }
