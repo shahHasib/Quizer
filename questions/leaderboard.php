@@ -2,7 +2,7 @@
 include('../registerpage/db_connection.php'); // Ensure this path is correct
 
 // Fetch leaderboard data
-$sql = "SELECT username, score FROM leaderboard ORDER BY score DESC LIMIT 10";
+$sql = "SELECT username, score FROM leaderboard ORDER BY score DESC";
 $result = $conn->query($sql);
 ?>
 
@@ -13,19 +13,6 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            width: 100%;
-            margin: auto;
-            overflow: hidden;
-            padding: 0px;
-        }
         header {
             background: #333;
             color: #fff;
@@ -37,10 +24,10 @@ $result = $conn->query($sql);
             width: 100%;
             margin: 20px auto;
             border-collapse: collapse;
+            text-align:center;
         }
         th, td {
-            padding:10px 30px;
-            width: 100%;
+            padding:10px 20px;
             text-align: center;
             border: 1px solid #ddd;
         }
@@ -72,7 +59,7 @@ $result = $conn->query($sql);
     <h1>Leaderboard</h1>
 </header>
 
-<div class="container">
+<div class="contains">
     <table>
         <tr>
             <th>Rank</th>

@@ -50,7 +50,7 @@
   <div class="container" id="container">
     <div class="intro">
       <div>
-        <h1>Coding quizzes for kids and teens</h1>
+        <!-- <h1>Coding quizzes for kids and teens</h1> -->
         
       </div>
       <div class="switchbtn">

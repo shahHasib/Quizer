@@ -77,7 +77,7 @@ nav {
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 1px 1px 2px cyan,-1px -1px 2px cyan;
+    box-shadow: 1px 1px 2px red,-1px -1px 2px red;
 }
 
 .contact-form .form-group {

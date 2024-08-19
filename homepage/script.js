@@ -18,29 +18,29 @@ hamberger.addEventListener('click',()=>{
   bar3.classList.toggle("bar-3");
 })
 
-color.addEventListener('change',(e)=>{
-if(e.target.value=="red"){
- document.documentElement.style.setProperty('--main-color','red');
-}
+// color.addEventListener('change',(e)=>{
+// if(e.target.value=="red"){
+//  document.documentElement.style.setProperty('--main-color','red');
+// }
 
-if(e.target.value=="blue"){
-  document.documentElement.style.setProperty('--main-color','blue');
- }
- if(e.target.value=="green"){
-  document.documentElement.style.setProperty('--main-color','green');
- }
- if(e.target.value=="aqua"){
-  document.documentElement.style.setProperty('--main-color','aqua');
- }
- if(e.target.value=="gray"){
-  document.documentElement.style.setProperty('--main-color','grey');
- }
- if(e.target.value=="black"){
-  document.documentElement.style.setProperty('--main-color','black');
- }
+// if(e.target.value=="blue"){
+//   document.documentElement.style.setProperty('--main-color','blue');
+//  }
+//  if(e.target.value=="green"){
+//   document.documentElement.style.setProperty('--main-color','green');
+//  }
+//  if(e.target.value=="aqua"){
+//   document.documentElement.style.setProperty('--main-color','aqua');
+//  }
+//  if(e.target.value=="gray"){
+//   document.documentElement.style.setProperty('--main-color','grey');
+//  }
+//  if(e.target.value=="black"){
+//   document.documentElement.style.setProperty('--main-color','black');
+//  }
  
 
-})
+// })
 
 leaderboardbtn.addEventListener('click',function(){
  // alert(0)
