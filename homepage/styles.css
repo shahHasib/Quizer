@@ -1,5 +1,5 @@
 :root {
-  --main-color:red;
+  --main-color:green;
   
 }
 @property --angle{
@@ -87,6 +87,40 @@ nav .userImage {
   background-size: cover;
   border: 1px solid white;
 }
+
+.bg .moon{
+  z-index:300 ;
+  position: absolute;
+  top: -90px;
+  right: 20px;
+  margin:0% -35%;
+  outline: none;
+  background-size: cover;
+  width: 520px;
+  height: auto;
+  filter: drop-shadow(0px 0px 320px  aqua );
+  border-radius: 100%;
+  box-shadow: 2px 2px 230px aqua;
+  animation: change 10s linear infinite;
+}
+@keyframes change {
+  0%{
+    filter: drop-shadow(0px 0px 320px  aqua );
+    box-shadow: 2px 2px 320px aqua;
+  }
+  50%{
+    filter: drop-shadow(0px 0px 320px  red);
+    box-shadow: 2px 2px 320px red;
+  }
+  80%{
+    filter: drop-shadow(0px 0px 320px green);
+    box-shadow: 2px 2px 320px green;
+  }
+  100%{
+    filter: drop-shadow(0px 0px 320px blue );
+    box-shadow: 2px 2px 320px blue;
+  }
+}
 .bg img{
   height: 100vh;
   width: 100%;
@@ -99,15 +133,15 @@ nav .userImage {
 .text{
   font-size: 20pt;
   position: absolute;
-  top: 40%;
+  top: 70%;
   right: 14%;
   font-weight: 500;
-  z-index: 2000;
+  z-index: 200;
   color: white;
 }
 body .bg button{
   position: absolute;
-  bottom: 300px;
+  bottom: 80px;
   right: 31.5%;
   color: white;
   padding: 8px 10px;
@@ -123,7 +157,7 @@ body .bg button:hover{
 }
 
 .container {
-  top: 101vh;
+  top: 100.1vh;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -132,6 +166,7 @@ body .bg button:hover{
   flex-wrap: wrap;
   width: 100%;
   color: black;
+  background-color:black;
  
 }
 
@@ -141,7 +176,7 @@ body .bg button:hover{
   justify-content: start;
   align-items: start;
   width: 100%;
-  margin: 30px 5px;
+  margin: 60px 5px;
 }
 
 .container .switchbtn button {
@@ -173,7 +208,7 @@ body .bg button:hover{
 
 .card {
   background-color: white;
-  box-shadow: 1px 1px 2px var(--main-color),-1px -1px 2px var(--main-color);
+  box-shadow: 1px 1px 20px var(--main-color),-1px -1px 20px var(--main-color);
   margin: 20px;
   border-radius: 8px;
   overflow: hidden;

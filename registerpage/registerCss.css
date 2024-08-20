@@ -1,5 +1,5 @@
 :root {
-  --main-color: rgb(223, 87, 38);
+  --main-color: green;
 }
 
 * {
@@ -7,13 +7,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-variant: small-caps;
+  
 }
 
 body {
   color: black;
   font-size: 15pt;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   margin: 0 10px;
   box-shadow: 0px 0px 40px var(--main-color);
   height: 100vh;
@@ -40,7 +40,7 @@ header {
 
 body header nav {
   height: 80px;
-  background-color: var(--main-color);
+  background-color: black;
   color: #ffff;
   display: flex;
   justify-content: space-between;
@@ -108,7 +108,8 @@ nav .userImage {
   border-radius: 20px;
   outline: none;
   overflow: hidden;
-  box-shadow: 0 0px 35px var(--main-color);
+  box-shadow: 0 0px 25px var(--main-color),0 0px 25px var(--main-color);
+  border: 2px solid black;
 }
 
 .container .img {
@@ -159,9 +160,11 @@ nav .userImage {
 .form input {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   box-sizing: border-box;
   border-radius: 10px;
+  font-weight: 600;
+  font-size: 15pt;
 }
 
 .form input[type=submit] {

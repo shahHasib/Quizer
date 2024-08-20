@@ -9,17 +9,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="userprofile">
-                <img src="../resources/logo.png" alt="image" class="userImage" />
-                <p class="userName">Quizer</p>
-            </div>
-            <div class="links">
-                <a href="../homepage/index.php">Home</a>
-                <a href="../aboutus/about.html">About Us</a>
-                <a href="/contacus/contac.html">Contact Us</a>
-            </div>
-        </nav>
+        <<?php include('../partials/header.html'); ?>
     </header>
 
     <div class="container" id="contact">

@@ -1,26 +1,27 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e71515;
-    margin: 0;
-    padding: 0;
-    color: #333;
+    color: white;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .container {
-    width: 95%;
-    margin: 40px auto 0px auto;
-    padding: 100px 20px 20px 20px;
+    position: absolute;
+    top: 110px;
+    width: 90%;
     background-color: #ecf2ed;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 15px var(--main-color),0 0px 15px var(--main-color);
+    padding: 40px;
 }
 h1{
     text-align: center;
 
 }
-.container select, button {
+.container select {
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
@@ -38,16 +39,17 @@ h1{
 
 #quiz-page button,#play-now {
     display: block;
-    width: 100%;
+    min-width: 100%;
     padding: 10px;
-    margin: 5px 0;
-    border: none;
+    margin: 10px auto;
+    border: 1px solid white;
     border-radius: 5px;
-    background-color: rgb(30, 26, 25);
+    background-color: black;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 0px 10px var(--main-color), 0px 0px 10px var(--main-color);
 }
 
 #quiz-page button:hover {

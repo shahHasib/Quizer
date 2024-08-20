@@ -19,24 +19,30 @@ $result = $conn->query($sql);
             padding: 10px 0;
             text-align: center;
             margin-bottom: 20px;
+            width: 100%;
         }
         table {
             width: 100%;
             margin: 20px auto;
             border-collapse: collapse;
             text-align:center;
+            box-shadow: 0 0px 5px var(--main-color),0 0px 5px var(--main-color);
         }
         th, td {
             padding:10px 20px;
             text-align: center;
-            border: 1px solid #ddd;
+            border: 2px solid black;
+            margin:1px;
+            background-color: white;
+            color:black;
         }
         th {
             background-color: #4CAF50;
             color: white;
         }
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: white;
+            color:black;
         }
         tr:hover {
             background-color: #ddd;
@@ -67,6 +73,7 @@ $result = $conn->query($sql);
             <th>Score</th>
         </tr>
         <?php
+        //header("Refresh:5")
         if ($result->num_rows > 0) {
             $rank = 1;
             while ($row = $result->fetch_assoc()) {

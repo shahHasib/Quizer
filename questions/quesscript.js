@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const question = questions[currentQuestionIndex];
-        document.getElementById('question').textContent = question.question;
+        document.getElementById('question').innerHTML = question.question;
         const allOptions = [...question.incorrect_answers, question.correct_answer];
         shuffleArray(allOptions);
         options.innerHTML = ''; // Clear previous options
 
         allOptions.forEach(option => {
             const button = document.createElement('button');
-            button.textContent = option;
+            button.innerHTML = option;
             button.classList.add('option');
             button.addEventListener('click', () => handleOptionClick(button, option));
             options.appendChild(button);

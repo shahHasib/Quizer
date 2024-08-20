@@ -19,8 +19,8 @@
         <a href="#home">Home</a>
         <a href="#container">Quizes</a>
 
-        <a href="../aboutus/about.html">About Us</a>
-        <a href="../contacus/contac.html">Contact Us</a>
+        <a href="../aboutus/about.php">About Us</a>
+        <a href="../contacus/contac.php">Contact Us</a>
         <!-- </div>
         <div class="colors"> -->
         <!-- <span class="colorName">Color :</span> <select name="color" id="color">
@@ -43,6 +43,7 @@
 
   <div class="bg">
   <p class="text">Great collection of <i> Quizes</i> </br> to acquire computer knowledge.</p>
+    <img src="../resources/download.png" alt="" class="moon">
     <img src="../resources/bg.png" alt="">
     <button onclick="window.location.href='../registerpage/register.html'">Get Started</button>
   </div>
