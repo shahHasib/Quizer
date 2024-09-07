@@ -13,7 +13,7 @@
     </header>
     <div class="container">
         <div id="start-page">
-            <button id="play-now">Questions are not loaded please refresh or choose other Content</button>
+            <button id="err"></button>
         </div>
         
         <div id="quiz-page" style="display:none;">

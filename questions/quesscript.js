@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const endPage = document.getElementById('end-page');
     const nameModal = document.getElementById('name-modal');
     const closeModal = document.querySelector('.close');
+    var Errortext=document.getElementById("err");
     const submitScoreButton = document.getElementById('submit-score');
     const usernameInput = document.getElementById('username');
     const finalScoreElement = document.getElementById('final-score');
@@ -31,13 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+           
             const data = await response.json();
             questions = data.results;
             startQuiz();
         } catch (error) {
-            console.error('There has been a problem with your fetch operation:', error);
-        } finally {
-            loader.style.display = 'none'; // Hide the loader
+            Errortext.innerHTML='Error : '+ error+"\nPlease check your internet connection.";
+        }
+        
+        finally {
+            loader.style.display = 'none'; // 
         }
     }
 

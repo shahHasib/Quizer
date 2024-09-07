@@ -37,7 +37,7 @@ h1{
     margin-bottom: 10px;
 }
 
-#quiz-page button,#play-now {
+#quiz-page button,#err {
     display: block;
     min-width: 100%;
     padding: 10px;
