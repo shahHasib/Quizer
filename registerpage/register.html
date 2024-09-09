@@ -7,39 +7,35 @@
   <title>Forms</title>
   <link rel="stylesheet" href="registerCss.css" />
 </head>
-
 <body>
-  <header>
-    <nav>
-      <div class="userprofile">
-        <img src="../resources/logo.png" alt="image" class="userImage" />
-        <p class="userName">Quizer</p>
-      </div>
+  <nav>
+    <div class="userprofile">
+      <img src="../resources/logo.png" alt="image" class="userImage" />
+      <p class="userName">Quizer</p>
+    </div>
 
-      <div class="colors">
-        <span class="colorName">Color :</span>
-        <select name="color" id="color">
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
-          <option value="green" selected>Green</option>
-          <option value="black">Black</option>
-          <option value="gray">Gray</option>
-          <option value="aqua">Aqua</option>
-        </select>
-      </div>
-      <div class="links">
-        <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
-      </div>
-    </nav>
-  </header>
-  <div class="toggle-container"></div>
+    <div class="colors">
+      <span class="colorName">Color :</span>
+      <select name="color" id="color">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green" selected>Green</option>
+        <option value="black">Black</option>
+        <option value="gray">Gray</option>
+        <option value="aqua">Aqua</option>
+      </select>
+    </div>
+    <div class="links">
+      <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
+    </div>
+  </nav>
+
   <div class="container">
     <div class="form-container">
       <div class="form-inner">
         <form id="login-form" class="form" action="login_process.php" method="POST">
           <h2>Login</h2>
           <input type="text" id="login-username" placeholder="Username" name="username" />
-
           <input type="password" id="login-password" placeholder="Password" name="password" />
 
           <input type="submit" value="Login" />

@@ -9,7 +9,6 @@
 </head>
 
 <body id="home">
-  <header>
     <nav>
       <div class="userprofile">
         <img src="../resources/logo.png" alt="image" class="userImage" />
@@ -18,7 +17,7 @@
       <div class="links">
         <a href="#home">Home</a>
         <a href="#container">Quizes</a>
-
+       
         <a href="../aboutus/about.php">About Us</a>
         <a href="../contacus/contac.php">Contact Us</a>
         <!-- </div>
@@ -38,14 +37,14 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
+      <div>
+      <a href="../registerpage/register.html" id="signin">Sign In</a>
+      </div>
     </nav>
-  </header>
-
   <div class="bg">
   <p class="text">Great collection of <i> Quizes</i> </br> to acquire computer knowledge.</p>
-    <img src="../resources/download.png" alt="" class="moon">
-    <img src="../resources/bg.png" alt="">
-    <button onclick="window.location.href='../registerpage/register.html'">Get Started</button>
+    <img src="../resources/bg.png" alt="" />
+    <button onclick="window.location.href='#container'">Get Started</button>
   </div>
 
   <div class="container" id="container">
