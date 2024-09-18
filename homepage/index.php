@@ -43,7 +43,7 @@
     </nav>
   <div class="bg">
   <p class="text">Great collection of <i> Quizes</i> </br> to acquire computer knowledge.</p>
-    <img src="../resources/bg.png" alt="" />
+    <img src="../resources/web.jpg" alt="" />
     <button onclick="window.location.href='#container'">Get Started</button>
   </div>
 
