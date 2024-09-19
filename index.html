@@ -44,9 +44,22 @@
         a:active {
             transform: scale(0.95);
         }
+        .video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
     </style>
 </head>
 <body>
+    <video src="./resources/landingpage.mp4" autoplay muted loop class="video-background"></video>
     <h1>Quizer</h1>
    <a href="homepage\index.php"><h1>Tap me to go to my website</h1></a>
 </body>

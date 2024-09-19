@@ -1,5 +1,5 @@
 :root {
-  --main-color: #FEA101;
+  --main-color: #B798F6;
 }
 
 * {
@@ -13,10 +13,9 @@
 body {
   color: black;
   font-size: 15pt;
-  background-color: rgb(0, 0, 0);
-  margin: 0 10px;
-  box-shadow: 0px 0px 40px var(--main-color);
-  height: 100vh;
+  background-color: #B798F6;
+  margin: 0;
+ 
 }
 
 select {
@@ -39,16 +38,17 @@ header {
 }
 
 body nav {
-  height: 80px;
-  background-color: black;
+  height: 12vh;
+  background-color: #B798F6;
   color: #ffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
-  width: 98.7%;
+  width: 100%;
   position: fixed;
   z-index: 1000;
+  border-bottom: 2px solid white;
 }
 
 #home {
@@ -88,11 +88,11 @@ nav .userName {
 }
 
 nav .userImage {
-  height: 65px;
+  height: 85px;
   border-radius: 100%;
   padding: 5px;
   background-size: cover;
-  border: 1px solid white;
+  
 }
 
 .container {
@@ -108,8 +108,9 @@ nav .userImage {
   border-radius: 20px;
   outline: none;
   overflow: hidden;
-  box-shadow: 0 0px 25px var(--main-color),0 0px 25px var(--main-color);
-  border: 2px solid black;
+  box-shadow: 0 0px 25px #efebf7,0 0px 20px #9273cf;
+ 
+  background-color: #f4f1f8;
 }
 
 .container .img {
@@ -147,9 +148,9 @@ nav .userImage {
   width: 50%;
   padding: 40px;
   box-sizing: border-box;
-  background: white;
+  background: #B494F5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-right: 2px solid;
+  
 }
 
 .form h2 {
@@ -170,8 +171,8 @@ nav .userImage {
 .form input[type=submit] {
   width: 100%;
   padding: 10px;
-  background: var(--main-color);
-  color: white;
+  background: white;
+  color: black;
   border: none;
   cursor: pointer;
 }
@@ -189,7 +190,7 @@ nav .userImage {
 #slide-register-btn {
   position: absolute;
   top: 40%;
-  left: 25%;
+  left: 5%;
   max-width: 200px;
   z-index: 200;
 }
@@ -197,7 +198,7 @@ nav .userImage {
 #slide-login-btn {
   position: absolute;
   top: 40%;
-  left: 25%;
+  left: 5%;
   max-width: 200px;
   z-index: 200;
 }

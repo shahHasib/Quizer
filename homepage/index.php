@@ -12,7 +12,7 @@
     <nav>
       <div class="userprofile">
         <img src="../resources/logo.png" alt="image" class="userImage" />
-        <p class="userName">Quizer</p>
+       
       </div>
       <div class="links">
         <a href="#home">Home</a>
