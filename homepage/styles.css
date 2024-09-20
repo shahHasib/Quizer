@@ -358,15 +358,20 @@ footer {
 
 @media (max-width:768px) {
    body nav{
-    height: 100vh;
-    border: none;
+    display: flex;
+   
+    padding: 0px 0px;
+    height: 15.5vh;
+    
     flex-direction: column;
+    background-color: #906FD8;
+    color: white;
   }
   .menu {
     display: block;
     position: absolute;
-    right: 0;
-    top: 0px;
+    right: 10px;
+    top: 10px;
     margin: 10px;
   }
 
@@ -382,12 +387,37 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
+    border: 1px solid white;
   }
   nav .active a:hover {
     border: 3px solid white;
+    padding: 3px 10px;
   }
-  
-  
+  .bg img{
+    display: none;
+  }
+  .bg .text{
+    text-align: center;
+    margin: auto;
+  }
+  .bg button{
+    left: 35%;
+    top: 70%;
+  }
+  #signin{
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+  }
+  .footer-container{
+    padding: 0px;
+    align-items: center;
+    
+  }
+  .footer-container h3 {
+   border-bottom: 2px solid white;
+    
+  }
 
 }

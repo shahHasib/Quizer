@@ -237,47 +237,78 @@ nav .userImage {
   color: red;
 }
 
+/* Tablet view */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    width: 90%;
-    height: auto;
   }
 
-  .container .img {
+  .form-container,
+  .img {
     width: 100%;
-    height: auto;
   }
 
-  .container .img img {
+  .img {
+    margin-top: 20px;
+  }
+
+  .form input {
+    font-size: 16px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  /* Hide the image on small screens */
+  .img {
     display: none;
   }
 
-  .container .form-container {
-    width: 100%;
-    height: auto;
+  .form input {
+    font-size: 14px;
+    padding: 8px;
   }
 
-  .img #slide-login-btn, .img #slide-register-btn {
-    display: flex;
-    top: 53%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
-    position: absolute;
+  .errLine {
+    font-size: 12px;
   }
 
-  .form-inner {
-    width: 200%; /* Ensure it slides properly */
+  .errLine img {
+    width: 20px;
   }
 
-  .form {
-    width: 50%;
+  /* For showing register form when clicked */
+  #login-form {
+    display: none; /* Hide login form initially */
   }
 
-  .err {
-    margin: 20px 0;
-    width: 100%;
-    position: static;
+  #register-form {
+    display: block; /* Show register form */
+  }
+
+  /* Toggle forms when buttons are clicked */
+  #slide-login-btn.clicked + #login-form {
+    display: block; /* Show login form */
+  }
+
+  #slide-register-btn.clicked + #register-form {
+    display: block; /* Show register form */
+  }
+
+  /* Hide the other form when one is clicked */
+  #slide-login-btn.clicked + #register-form {
+    display: none; /* Hide register form when login is clicked */
+  }
+
+  #slide-register-btn.clicked + #login-form {
+    display: none; /* Hide login form when register is clicked */
   }
 }
