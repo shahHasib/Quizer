@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>headers</title>
+  <title>Headers</title>
 
   <style>
     :root {
@@ -16,7 +16,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-
     }
 
     body {
@@ -38,7 +37,7 @@
     option {
       background-color: var(--main-color);
       font-variant: small-caps;
-      padding: 5 20px;
+      padding: 5px 20px;
       text-align: center;
       border: 2px solid white;
     }
@@ -67,8 +66,6 @@
 
     #home img {
       height: 50px;
-      align-items: center;
-      color: white;
       border: none;
     }
 
@@ -89,7 +86,7 @@
     }
 
     nav a:hover {
-      border-bottom: 3px solid white;
+      border-bottom: 2px solid white;
     }
 
     nav .userName {
@@ -103,6 +100,12 @@
       padding: 5px;
       background-size: cover;
       border: 1px solid white;
+    }
+
+    .logout {
+      margin-left: 20px;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -120,7 +123,7 @@
         <select name="color" id="color">
           <option value="red">Red</option>
           <option value="blue">Blue</option>
-          <option value="green" >Green</option>
+          <option value="green">Green</option>
           <option value="black">Black</option>
           <option value="gray">Gray</option>
           <option value="aqua" selected>Aqua</option>
@@ -129,7 +132,19 @@
 
       <div class="links">
         <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
+        <div class="user-status">
+          <?php
+          session_start();
+          if (isset($_SESSION['username'])) {
+              echo '<h6 class="userName" style="font-size:18px;">Hi, ' . htmlspecialchars($_SESSION['username']) . '</h6>';
+              echo '<a href="logout.php"  id="signin"><img src="../resources/exit.png" alt="" style="height: 45px;"></a>';
+          } else {
+              echo '<a href="../registerpage/register.html" id="signin">Login</a>';
+          }
+          ?>
+        </div>
       </div>
+
       <div class="menu">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -140,43 +155,17 @@
 
   <script>
     var hamberger = document.querySelector(".menu");
-    var bar1 = document.querySelector(".bar1");
-    var bar2 = document.querySelector(".bar2");
-    var bar3 = document.querySelector(".bar3");
-    var menu = document.querySelector(".links")
+    var menu = document.querySelector(".links");
     var color = document.querySelector("#color");
+
     hamberger.addEventListener('click', () => {
       menu.classList.toggle("active");
-      bar1.classList.toggle("bar-1");
-      bar2.classList.toggle("bar-2");
-      bar3.classList.toggle("bar-3");
-    })
+      // Add any class toggle animations for bars here if desired
+    });
 
     color.addEventListener('change', (e) => {
-      if (e.target.value == "red") {
-        document.documentElement.style.setProperty('--main-color', 'red');
-      }
-      if (e.target.value == "blue") {
-        document.documentElement.style.setProperty('--main-color', 'blue');
-      }
-      if (e.target.value == "green") {
-        document.documentElement.style.setProperty('--main-color', 'green');
-      }
-      if (e.target.value == "aqua") {
-        document.documentElement.style.setProperty('--main-color', 'aqua');
-      }
-      if (e.target.value == "gray") {
-        document.documentElement.style.setProperty('--main-color', 'grey');
-      }
-      if (e.target.value == "black") {
-        document.documentElement.style.setProperty('--main-color', 'black');
-      }
-
-
-    })
-
-
-
+      document.documentElement.style.setProperty('--main-color', e.target.value);
+    });
   </script>
 </body>
 
