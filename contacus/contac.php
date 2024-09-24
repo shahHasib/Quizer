@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <<?php include('../partials/header.html'); ?>
+        <<?php include('../partials/header.php'); ?>
     </header>
 
     <div class="container" id="contact">

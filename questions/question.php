@@ -6,10 +6,18 @@
     <title>Quiz Game</title>
     <link rel="stylesheet" href="ques.css">
 </head>
+
+<?php 
+if(isset($_SESSION['username'])){
+    header("Location:../registerpage/register.html");
+    exit();
+}
+
+?>
 <body>
     <header>
     
-        <?php include('../partials/header.html'); ?>
+        <?php include('../partials/header.php'); ?>
     </header>
     <div class="container">
         <div id="start-page">
