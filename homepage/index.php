@@ -37,9 +37,17 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
-      <div>
-      <a href="../registerpage/register.html" id="signin">Sign In</a>
-      </div>
+      <div class="user-status">
+          <?php
+          session_start();
+          if (isset($_SESSION['username'])) {
+              echo '<h6 class="userName" style="font-size:18px;">Hi, ' . htmlspecialchars($_SESSION['username']) . '</h6>';
+              echo '<a href="logout.php"  id="signin">Logout</a>';
+          } else {
+              echo '<a href="../registerpage/register.html" id="signin">Login</a>';
+          }
+          ?>
+        </div>
     </nav>
   <div class="bg">
   <p class="text">Great collection of <i> Quizes</i> </br> to acquire computer knowledge.</p>
