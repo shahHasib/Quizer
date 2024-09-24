@@ -37,7 +37,7 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#contact">Feedback</a></li>
                 </ul>
             </div>
             <div class="footer-contact">

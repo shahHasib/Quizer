@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     
-    <title>Contact Us - Quizer</title>
+    <title>Feedback - Quizer</title>
 </head>
 <body>
     <header>
@@ -13,7 +13,7 @@
     </header>
 
     <div class="container" id="contact">
-        <h1>Contact Us</h1>
+        <h1>Feedback</h1>
         <form id="contactForm" class="contact-form">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -40,7 +40,7 @@
                 <ul>
                     <li><a href="../homepage/index.php">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#contact">Feedback</a></li>
                 </ul>
             </div>
             <div class="footer-contact">

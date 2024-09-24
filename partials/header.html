@@ -22,9 +22,7 @@
     body {
       color: black;
       font-size: 15pt;
-      background-color: #906FD8;
-      margin: 0 10px;
-      box-shadow: 0px 0px 40px var(--main-color);
+      background-color: var(--main-color);
       height: 100vh;
     }
 
@@ -49,60 +47,34 @@
 
     body header nav {
       top: 0;
-      height: 80px;
-      background-color: #906FD8;
+      height: 10vh;
+      background-color:var(--main-color);
       color: #ffff;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      margin-bottom: 50px;
-      width: 98.7%;
+     padding: 5px 10px;
+      width: 100%;
       position: fixed;
       z-index: 1000;
-    }
-
-    #home {
-      color: white;
+      border-bottom: 2px solid white;
     }
 
     #home img {
-      height: 50px;
-      align-items: center;
+      height: 6vh;
       color: white;
       border: none;
     }
 
-    nav div {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 5px;
-      margin: auto auto;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      margin: 5px;
-      padding: 5px;
-      transition: color 0.5s ease;
-    }
 
     nav a:hover {
       border-bottom: 3px solid white;
     }
 
-    nav .userName {
-      font-size: 26pt;
-      padding: 6px;
-    }
-
-    nav .userImage {
-      height: 85px;
-      border-radius: 100%;
-      padding: 5px;
+    nav .logo {
+      height:10vh;
       background-size: cover;
-      border: 1px solid white;
+     
     }
   </style>
 </head>
@@ -111,8 +83,8 @@
   <header>
     <nav>
       <div class="userprofile">
-        <img src="../resources/logo.png" alt="image" class="userImage" />
-        <p class="userName">Quizer</p>
+        <img src="../resources/logo.png" alt="image" class="logo" />
+       
       </div>
 
       <div class="colors">
@@ -137,6 +109,7 @@
       </div>
     </nav>
   </header>
+  
 
   <script>
     var hamberger = document.querySelector(".menu");
@@ -145,6 +118,7 @@
     var bar3 = document.querySelector(".bar3");
     var menu = document.querySelector(".links")
     var color = document.querySelector("#color");
+    
     hamberger.addEventListener('click', () => {
       menu.classList.toggle("active");
       bar1.classList.toggle("bar-1");

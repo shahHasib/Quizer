@@ -19,7 +19,7 @@
         <a href="#container">Quizes</a>
        
         <a href="../aboutus/about.php">About Us</a>
-        <a href="../contacus/contac.php">Contact Us</a>
+        <a href="../contacus/contac.php">Feedback</a>
         <!-- </div>
         <div class="colors"> -->
         <!-- <span class="colorName">Color :</span> <select name="color" id="color">
@@ -1196,7 +1196,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="../registerpage/register.html">Login</a></li>
             <li><a href="../aboutus/about.html">About Us</a></li>
-            <li><a href="../contacus/conatc.html">Contact Us</a></li>
+            <li><a href="../contacus/conatc.html">Feedback</a></li>
           </ul>
         </div>
         <div class="footer-social">
