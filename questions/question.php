@@ -12,6 +12,9 @@ if(isset($_SESSION['username'])){
     header("Location:../registerpage/register.html");
     exit();
 }
+else{
+    
+}
 
 ?>
 <body>
@@ -52,22 +55,11 @@ if(isset($_SESSION['username'])){
             </div>
         </div>
         <!-- Loader -->
-        <div id="loader" class="loader" style="display:none;">
+        <div id="loader" class="loader" style="display:block;">
             <div class="spinner"></div>
             <p>Loading...</p>
         </div>
     </div>
     <script src="quesscript.js" defer></script>
-    <script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en', // Change 'en' to the default language of your website
-      includedLanguages: 'en,hi,gu,ur,ar', // List of languages you want to include (comma-separated)
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<div id="google_translate_element"></div>
 </body>
 </html>

@@ -42,9 +42,9 @@
           session_start();
           if (isset($_SESSION['username'])) {
               echo '<h6 class="userName" style="font-size:20pt;">Hi, ' . htmlspecialchars($_SESSION['username']) . '</h6>';
-              echo '<a href="../homepage/logout.php"  class="logout"><img src="../resources/exit.png" alt="" style="height: 45px;"></a>';
+              echo '<a href="../homepage/logout.php"  class="logout"><img src="../resources/logout.png" alt="" style="height: 45px;filter:drop-shadow(2px 2px 20px aqua);border:2px solid white;border-radius:50%;overflow:hidden;outline:none;padding:10px;"></a>';
           } else {
-              echo '<a href="../registerpage/register.html" id="signin">Login</a>';
+              echo '<a href="../registerpage/login.html" id="signin">Login</a>';
           }
           ?>
         </div>

@@ -154,15 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error submitting score:', error);
         }
-    }
-
-    function addScoreToLeaderboard(username, score) {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${username}: ${score}`;
-        leaderboardList.appendChild(listItem);
-    }
-
-    
+    }  
 
     submitScoreButton.addEventListener('click', () => {
         const username = usernameInput.value.trim();

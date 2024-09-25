@@ -38,15 +38,13 @@ header {
 }
 
 body nav {
-  height: 12vh;
+  height: 10vh;
   background-color: #B798F6;
   color: #ffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
   width: 100%;
-  position: fixed;
   z-index: 1000;
   border-bottom: 2px solid white;
 }
@@ -96,70 +94,45 @@ nav .userImage {
 }
 
 .container {
-  top: 20vh;
-  margin: 0 auto;
-  position: relative;
-  width: 50%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease-in-out;
-  border-radius: 20px;
-  outline: none;
-  overflow: hidden;
-  box-shadow: 0 0px 25px #efebf7,0 0px 20px #9273cf;
- 
-  background-color: #f4f1f8;
-}
-
-.container .img {
-  width: 50%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-  position: relative;
-}
-
-.container .img img {
   width: 100%;
-  height: 100%;
-  filter: brightness(100%);
-  
+  height: calc(100vh - 20vh);
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  background-color: #9273cf;
 }
-
+.container .image {
+  width: 50%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.container .image img{
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
 .form-container {
   width: 50%;
   height: 100%;
   overflow: hidden;
-  position: relative;
-  outline: none;
   transition: transform 0.5s ease-in-out;
   
 }
-
-.form-inner {
+form{
   display: flex;
-  width: 200%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.form {
-  width: 50%;
-  padding: 40px;
-  box-sizing: border-box;
-  background: #B494F5;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
-}
 
 .form h2 {
-  margin: 0 0 20px;
+  margin:20px;
   font-size: 24px;
 }
 
 .form input {
-  width: 100%;
+  width: 60%;
   padding: 10px;
   margin: 10px auto;
   box-sizing: border-box;
@@ -169,7 +142,7 @@ nav .userImage {
 }
 
 .form input[type=submit] {
-  width: 100%;
+  width: 60%;
   padding: 10px;
   background: white;
   color: black;
@@ -232,82 +205,4 @@ nav .userImage {
   border: none;
   border-radius: 50%;
   box-shadow: 0px 0px 5px rgb(255, 255, 255);
-}
-
-
-
-/* Tablet view */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .form-container,
-  .img {
-    width: 100%;
-  }
-
-  .img {
-    margin-top: 20px;
-  }
-
-  .form input {
-    font-size: 16px;
-  }
-}
-
-/* Mobile view */
-@media (max-width: 480px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .form-container {
-    width: 100%;
-  }
-
-  /* Hide the image on small screens */
-  .img {
-    display: none;
-  }
-
-  .form input {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .errLine {
-    font-size: 12px;
-  }
-
-  .errLine img {
-    width: 20px;
-  }
-
-  /* For showing register form when clicked */
-  #login-form {
-    display: none; /* Hide login form initially */
-  }
-
-  #register-form {
-    display: block; /* Show register form */
-  }
-
-  /* Toggle forms when buttons are clicked */
-  #slide-login-btn.clicked + #login-form {
-    display: block; /* Show login form */
-  }
-
-  #slide-register-btn.clicked + #register-form {
-    display: block; /* Show register form */
-  }
-
-  /* Hide the other form when one is clicked */
-  #slide-login-btn.clicked + #register-form {
-    display: none; /* Hide register form when login is clicked */
-  }
-
-  #slide-register-btn.clicked + #login-form {
-    display: none; /* Hide login form when register is clicked */
-  }
 }

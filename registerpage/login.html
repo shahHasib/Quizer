@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="registerCss.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="userprofile">
+            <img src="../resources/logo.png" alt="image" class="userImage" />
+        </div>
+
+        <div class="colors">
+            <span class="colorName">Color :</span>
+            <select name="color" id="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green" selected>Default</option>
+                <option value="black">Black</option>
+                <option value="gray">Gray</option>
+                <option value="aqua">Aqua</option>
+            </select>
+        </div>
+        <div class="links">
+            <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <form id="login-form" class="form" action="login_process.php" method="POST">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username" name="username" />
+                <input type="password" id="login-password" placeholder="Password" name="password" />
+                <input type="submit" value="Login" />
+
+                <span>New user</span><a href="../registerpage/register.html">Register</a>
+            </form>
+            <div class="err">
+                <div class="errLine">
+                    <img src="" alt="" class="errImage1" />
+                    <span class="errText-1"></span>
+                </div>
+                <div class="errLine">
+                    <img src="" alt="" class="errImage2" />
+                    <span class="errText-2"></span>
+                </div>
+                <div class="errLine">
+                    <img src="" alt="" class="errImage3" />
+                    <span class="errText-3"></span>
+                </div>
+                <div class="errLine">
+                    <img src="" alt="" class="errImage4" />
+                    <span class="errText-4"></span>
+                </div>
+                <div class="errLine">
+                    <img src="" alt="" class="errImage5" />
+                    <span class="errText-5"></span>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="../resources/web.jpg" alt="" />
+        </div>
+    </div>
+    
+    <script src="./registerScript.js"></script>
+</body>
+
+</html>
