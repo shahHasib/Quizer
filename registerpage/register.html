@@ -4,74 +4,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forms</title>
+  <title>Register</title>
   <link rel="stylesheet" href="registerCss.css" />
 </head>
+
 <body>
   <nav>
-    <div class="userprofile">
-      <img src="../resources/logo.png" alt="image" class="userImage" />
-     
-    </div>
-
-    <div class="colors">
-      <span class="colorName">Color :</span>
-      <select name="color" id="color">
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="green" selected>Default</option>
-        <option value="black">Black</option>
-        <option value="gray">Gray</option>
-        <option value="aqua">Aqua</option>
-      </select>
-    </div>
-    <div class="links">
-      <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
+    <div class="navbar-container">
+      <div class="logo">Your Logo</div>
+      <div class="theme-selector">
+        <span class="colorName">Color :</span>
+        <select name="color" id="color">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green" selected>Default</option>
+          <option value="black">Black</option>
+          <option value="gray">Gray</option>
+          <option value="aqua">Aqua</option>
+        </select>
+      </div>
+      <div class="links">
+        <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
+      </div>
     </div>
   </nav>
 
   <div class="container">
-    <div class="form-container">
-        <form id="register-form" class="form" action="register_process.php" method="POST"
-          onsubmit="return regValidation()">
-          <h2>Register</h2>
-          <input type="text" id="username" placeholder="Username" name="username" />
-          <input type="email" id="email" placeholder="Email" name="email" />
-          <input type="password" id="password" placeholder="Password" name="password" />
-          <input type="password" id="cpassword" placeholder="confirm Password" name="confirm_password" />
-          <input type="submit" id="btnSubmit" value="Register" />
-          <span>Already have an account ?</span><a href="../registerpage/login.html">Login</a>
-        </form>
-        <div class="err">
-          <div class="errLine">
-            <img src="" alt="" class="errImage1" />
-            <span class="errText-1"></span>
-          </div>
-          <div class="errLine">
-            <img src="" alt="" class="errImage2" />
-            <span class="errText-2"></span>
-          </div>
-          <div class="errLine">
-            <img src="" alt="" class="errImage3" />
-            <span class="errText-3"></span>
-          </div>
-          <div class="errLine">
-            <img src="" alt="" class="errImage4" />
-            <span class="errText-4"></span>
-          </div>
-          <div class="errLine">
-            <img src="" alt="" class="errImage5" />
-            <span class="errText-5"></span>
-          </div>
-        </div>
-       
+    <form id="register-form" class="register-form" action="register_process.php" method="POST" onsubmit="return regValidation()">
+      <h2>Register</h2>
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Username" name="username" required />
       </div>
-      <div class="image">
-        <img src="../resources/home.png" alt="">
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email" name="email" required />
       </div>
-    
-  
-</div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password" name="password" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="cpassword" placeholder="Confirm Password" name="confirm_password" required />
+      </div>
+      <div class="input-group">
+        <input type="submit" id="btnSubmit" value="Register" />
+      </div>
+      <div class="footer-links">
+        <span>Already have an account? </span><a href="../registerpage/login.html">Login</a>
+      </div>
+    </form>
+  </div>
 
   <script src="./registerScript.js"></script>
 </body>

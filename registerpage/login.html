@@ -1,74 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forms</title>
-    <link rel="stylesheet" href="registerCss.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./login.css">
 </head>
-
 <body>
-    <nav>
-        <div class="userprofile">
-            <img src="../resources/logo.png" alt="image" class="userImage" />
-        </div>
 
-        <div class="colors">
-            <span class="colorName">Color :</span>
-            <select name="color" id="color">
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green" selected>Default</option>
-                <option value="black">Black</option>
-                <option value="gray">Gray</option>
-                <option value="aqua">Aqua</option>
-            </select>
-        </div>
-        <div class="links">
-            <a href="../homepage/index.php" id="home"><img src="../resources/home.png" alt="" /></a>
+    <nav>
+        <div class="navbar-container">
+            <div class="logo">BrandLogo</div>
+            <div class="theme-selector">
+                <span>Select Theme:</span>
+                <select name="color" id="color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="black">Black</option>
+                    <option value="gray">Gray</option>
+                    <option value="aqua">Aqua</option>
+                </select>
+            </div>
         </div>
     </nav>
 
     <div class="container">
-        <div class="form-container">
-            <form id="login-form" class="form" action="login_process.php" method="POST">
-                <h2>Login</h2>
-                <input type="text" id="login-username" placeholder="Username" name="username" />
-                <input type="password" id="login-password" placeholder="Password" name="password" />
-                <input type="submit" value="Login" />
-
-                <span>New user</span><a href="../registerpage/register.html">Register</a>
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="login-form" action="login_process.php" method="POST" onsubmit="return regValidation()">
+                <div class="input-group">
+                    <input type="text" id="email" placeholder="Email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <input type="submit" id="btnSubmit" value="Login">
+                </div>
+                <div class="footer-links">
+                    <span>Don't have an account?</span><a href="../registerpage/register.html"> Sign up here</a>
+                </div>
             </form>
-            <div class="err">
-                <div class="errLine">
-                    <img src="" alt="" class="errImage1" />
-                    <span class="errText-1"></span>
-                </div>
-                <div class="errLine">
-                    <img src="" alt="" class="errImage2" />
-                    <span class="errText-2"></span>
-                </div>
-                <div class="errLine">
-                    <img src="" alt="" class="errImage3" />
-                    <span class="errText-3"></span>
-                </div>
-                <div class="errLine">
-                    <img src="" alt="" class="errImage4" />
-                    <span class="errText-4"></span>
-                </div>
-                <div class="errLine">
-                    <img src="" alt="" class="errImage5" />
-                    <span class="errText-5"></span>
-                </div>
+
+            <div class="password-validation">
+                <ul>
+                    <li><span class="validation-icon" id="lowercase-check"></span> At least one lowercase letter.</li>
+                    <li><span class="validation-icon" id="uppercase-check"></span> At least one uppercase letter.</li>
+                    <li><span class="validation-icon" id="digit-check"></span> At least one digit.</li>
+                    <li><span class="validation-icon" id="special-check"></span> At least one special character.</li>
+                    <li><span class="validation-icon" id="length-check"></span> Minimum 8 characters.</li>
+                </ul>
             </div>
         </div>
-        <div class="image">
-            <img src="../resources/web.jpg" alt="" />
-        </div>
     </div>
-    
-    <script src="./registerScript.js"></script>
-</body>
 
+    <script src="./loginScript.js"></script>
+</body>
 </html>
