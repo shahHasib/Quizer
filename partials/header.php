@@ -7,9 +7,17 @@
   <title>Headers</title>
 
   <style>
-    :root {
-      --main-color: #906FD8;
-    }
+   :root {
+    --main-color: #B798F6;
+    --form-bg: #fff;
+    --text-color: #333;
+    --input-bg: #f0f0f0;
+    --border: #ccc;
+    --button-bg: var(--main-color);
+    --button-hover-bg: #a57ae5;
+    --navbar-bg: rgba(0, 0, 0, 0.7);
+    --navbar-text-color: #fff;
+}
 
     * {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,13 +35,13 @@
 
     select {
       border: none;
-      background-color: transparent;
-      color: white;
+      background-color: var(--input-bg);
+  color: var(--text-color);
       font-size: 20px;
     }
 
     option {
-      background-color: var(--main-color);
+      background-color: var(--input-bg);
       font-variant: small-caps;
       padding: 5px 20px;
       text-align: center;
@@ -48,8 +56,8 @@
       top:0;
       
       height: 10vh;
-      background-color: var(--main-color);
-      color: #ffff;
+      background-color: var(--navbar-bg);
+      color: var(--navbar-text-color);
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -60,8 +68,8 @@
     }
 
     #signin {
-      background-color: white;
-      color: black;
+      background-color: var(--button-bg);
+      color: white;
       font-size: 20px;
       border-radius: 1vh;
       padding: 0.5vh 1.5vw;
@@ -70,7 +78,7 @@
     }
 
     #signin:hover {
-      background: #000;
+      background: var(--button-hover-bg);
       color: #dadada;
     }
 

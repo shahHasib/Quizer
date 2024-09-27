@@ -1,13 +1,14 @@
 :root {
-  --main-color:black;
-  
+  --main-color: #B798F6;
+  --text-color: #333;
+  --card-bg: #f0f0f0;
+  --border :#ebe1e1 ; 
+  --button-bg:  #ed4ee3;
+  --button-hover-bg: #a57ae5;
+  --navbar-bg: rgba(0, 0, 0, 0.7);
+  --navbar-text-color: #fff;
 }
-@property --angle{
-  
-  syntax: '<angle>';
-  initial-value: 1deg;
-  inherits: false;
-}
+
 
 * {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -22,10 +23,31 @@ html{
   box-sizing: border-box;
   font-family: 'Gilory';
 }
+ /* Container for the progress bar */
+ .progress-container {
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 5px;
+  
+ 
+}
+
+/* Inner progress bar */
+.progress-bar {
+ 
+  height: 100%;
+  width: 0%; 
+  background: linear-gradient(135deg, #c850c0, #4158d0);
+  border-radius: 1% 100% 100% 0;
+  transition: width 0.2s; 
+  box-shadow: 2px 2px 10px white;
+}
 
 body{
-  background-color: #B798F6;
-  color: white;
+  color: var(--text-color);
   font-size: 15pt;
   display: flex;
   flex-direction: column;
@@ -34,17 +56,18 @@ body{
   padding: 0;
   font-weight: 600;
   margin: 0;
+  background: linear-gradient(135deg, #c850c0, #4158d0);
 }
 body  nav {
   height: 10vh;
   width: 100%;
-  background-color: transparent;
-  color: #ffff;
+  background-color: var(--navbar-bg);
+  color:var(--navbar-text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
- border-bottom: 2px solid white;
+ border-bottom: 2px solid var(--border);
   padding: 5px auto;
 }
 nav div {
@@ -56,14 +79,14 @@ nav div {
 }
 nav  div a {
   text-decoration: none;
-  color: white;
+  color: var(--navbar-text-color);
   margin: 0px 5px;
   padding: 10px;
   transition: color 0.5s ease;
 }
 #signin{
-  background-color: white;
-  color: black;
+  background-color: var(--button-bg);
+  color: var(--navbar-text-color);
   font-size: 20px;
   border-radius: 1vh;
   padding: 0.5vh 1.5vw;
@@ -71,15 +94,15 @@ nav  div a {
   font-weight: 500;
 }
 #signin:hover{
-  background: #000
+  background: var(--button-hover-bg)
   ;
-  color: #dadada;
+  color: var(--navbar-text-color);
 }
 
 nav .links a:hover {
  
   border-radius: 10%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--border);
   transition: all ease-in-out 0.5ms;
 }
 
@@ -98,12 +121,12 @@ nav .userImage {
 }
 .logout {
   padding: 5px;
-  color: white;
+  color: var(--navbar-text-color);
   cursor: pointer;
-  border: none;
+  border : 2px solid var(--border);
 }
 .logout img:hover{
-  border: 2px solid white;
+  border : 2px solid var(--border); 
   border-radius: 50%;
 }
 
@@ -126,7 +149,7 @@ nav .userImage {
   font-size: 20pt;
   font-weight: 500;
   z-index: 100;
-  color: white;
+  color: var(--text-color);
   position: absolute;
   left: 3vw;
   top: 45vh;
@@ -135,17 +158,17 @@ nav .userImage {
   position: absolute;
   left: 3vw;
   top: 57vh;
-  color: white;
+  color: var(--text-color);
   padding: 8px 10px;
   font-size: 20px;
   border-radius: 10px;
-  border: 2px solid white;
+  border : 2px solid var(--border);
   z-index: 100;
-  background-color: transparent;
+  background-color: var(--button-bg);
 }
 body .bg button:hover{
-  background-color: #fff;
-  color: black;
+  background-color:var(--button-hover-bg);
+  color: var(--text-color);
 }
 
 
@@ -158,8 +181,8 @@ body .bg button:hover{
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
-  color: black;
-  background-color:#906FD8;
+  color: var(--text-color);
+  background: var(--main-color);
   font-weight: 600;
  
 }
@@ -176,10 +199,10 @@ body .bg button:hover{
 .container .switchbtn button {
   font-size: 18px;
   padding: 0 0 12px;
-  color: white;
-  border: none;
+  color: var(--text-color);
+  border : none; 
   background-color: transparent;
-  border-bottom: 2px solid;
+  border-bottom: 2px solid var(--border);
 }
 
 .container .switchbtn .btnLeaderboard {
@@ -196,12 +219,12 @@ body .bg button:hover{
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 100px;
-  color: black;
+  color:var(--text-color);
   margin: 20px;
 }
 
 .card {
-  background-color: white;
+  background-color: var(--card-bg);
   box-shadow: 1px 1px 10px white,-1px -1px 10px white;
   margin: 20px;
   border-radius: 8px;
@@ -235,7 +258,7 @@ body .bg button:hover{
 }
 
 .card .items h2 {
-  color: var(--main-color);
+  color: var(--text-color);
 }
 
 .card .items .grade,
@@ -257,17 +280,17 @@ body .bg button:hover{
   padding: 8px 20px;
   margin: 20px 25px;
   font-size: 18px;
-  border-color: var(--main-color);
-  background-color: transparent;
-  color: var(--main-color);
+  background-color: var(--button-bg);
+  color: var(--text-color);
   border-radius: 5px;
+  border: none;
   font-weight: 600;
 }
 
 .items button:hover {
-  background-color: var(--main-color);
+  background-color: var(--button-hover-bg);
   color: white;
-  border: none;
+  border : 2px solid var(--border); 
 }
 
 .menu {
@@ -284,7 +307,7 @@ body .bg button:hover{
   width: 9vw;
   margin: 0.9vh 0px;
   height: 3px;
-  background-color: white;
+  background-color: var(--button-bg);
   transition: 500ms;
   padding: 3px 4px;
   border-radius: 5px;
@@ -310,8 +333,8 @@ body .bg button:hover{
 }
 
 footer {
-  background-color: var(--main-color);
-  color: white;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text-color);
   padding: 10px 0;
   text-align: center;
   width: 100%;
@@ -377,8 +400,8 @@ footer {
     height: 15.5vh;
     
     flex-direction: column;
-    background-color: #906FD8;
-    color: white;
+    background-color: var(--navbar-bg);
+    color:var(--navbar-text-color);
   }
   .menu {
     display: block;
@@ -394,17 +417,17 @@ footer {
   }
   nav .active {
     width: 100%;
-    background-color: #906FD8;
-    color: black;
+    background-color: var(--navbar-bg);
+    color:var(--navbar-text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    border: 1px solid white;
+    border : 2px solid var(--border); 
   }
   nav .active a:hover {
-    border: 3px solid white;
+    border : 2px solid var(--border); 
     padding: 3px 10px;
   }
   .bg img{

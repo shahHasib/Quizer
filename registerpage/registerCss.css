@@ -48,8 +48,12 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
+    height:50px;
+    
+   
+}
+ img{
+    height: 5vh;
 }
 
 .theme-selector select {

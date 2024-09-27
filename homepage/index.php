@@ -9,6 +9,9 @@
 </head>
 
 <body id="home">
+<div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
     <nav>
       <div class="userprofile">
         <img src="../resources/logo.png" alt="image" class="userImage" />

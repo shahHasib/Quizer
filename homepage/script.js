@@ -9,6 +9,20 @@ var leaderboardbtn=document.querySelector('.btnLeaderboard');
 var leaderboard=document.querySelector('#ld');
 var btnquiz=document.querySelector(".btnQuizzes");
 
+var progress=document.querySelector('.progress-bar');
+
+window.addEventListener('scroll',()=>{
+  var winscreen=document.documentElement.scrollTop;
+console.log(winscreen);
+var height=document.documentElement.scrollHeight - document.documentElement.clientHeight;
+console.log(height);
+var scrolled=winscreen / height * 100;
+console.log(scrolled)
+progress.style.width =scrolled + "%";
+
+})
+
+
 
 
 hamberger.addEventListener('click',()=>{
