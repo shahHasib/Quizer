@@ -5,52 +5,52 @@ session_start();
 
 // Check if the request is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the submitted username and password, with basic sanitation
-    $username = trim($_POST['username']);
+    
+    $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Prepare SQL query to check the user's credentials
-    $sql = "SELECT id, username, password FROM users WHERE username = ? LIMIT 1";
+    // SQL for user/admin login
+    $sql = "SELECT id,username, email, password, admin FROM users WHERE email = ? LIMIT 1";
+    
     $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
 
-    if ($stmt) {
-        // Bind parameters and execute the query
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $stmt->store_result();
+    // Check if a matching username was found
+    if ($stmt->num_rows > 0) {
+        // Bind result variables
+        $stmt->bind_result($id,$username, $email, $hashed_password, $is_admin);
+        $stmt->fetch();
 
-        // Check if a matching username was found
-        if ($stmt->num_rows > 0) {
-            // Bind result variables
-            $stmt->bind_result($id, $username, $hashed_password);
-            $stmt->fetch();
+        // Verify the password
+        if (password_verify($password, $hashed_password)) {
+            // Password is correct, initiate session
+            $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $id;
 
-            // Verify the password
-            if (password_verify($password, $hashed_password)) {
-                // Password is correct, initiate session
-                $_SESSION['username'] = $username;
-                $_SESSION['user_id'] = $id;
-
-                // Redirect to homepage or user dashboard
-                header("Location: ../homepage/index.php");
+            // Check if the user is an admin
+            if ($is_admin == 1) {
+                // Redirect to admin panel
+                $_SESSION['admin_logged_in']=TRUE;
+                header("Location:../Admin/admin.php");
                 exit;
             } else {
-                // Incorrect password
-                $error_message = "Invalid username or password!";
+                // Redirect to user homepage or dashboard
+                header("Location: ../homepage/index.php");
+                exit;
             }
         } else {
-            // No such user exists
+            // Incorrect password
             $error_message = "Invalid username or password!";
         }
-
-        // Close statement
-        $stmt->close();
     } else {
-        // SQL query failed
-        $error_message = "Error connecting to the database. Please try again later.";
+        //user not exists
+        $error_message = "No users found!";
     }
-    
-    // Close database connection
+
+   
+    $stmt->close();
     $conn->close();
     
     // Redirect back to login page with error message
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Invalid request method
-    header("Location:login.php");
+    header("Location: login.php");
     exit;
 }
 ?>

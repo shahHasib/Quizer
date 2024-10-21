@@ -48,11 +48,10 @@ nav {
 }
 
 .logo {
-    height:50px;
-    
-   
+    height: 50px;
 }
- img{
+
+img {
     height: 5vh;
 }
 
@@ -120,6 +119,44 @@ nav {
     background-color: var(--button-hover-bg);
 }
 
+.password-validation {
+    
+    margin-top: 20px; 
+}
+
+.password-validation ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.password-validation li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    perspective: 100%;
+}
+
+.validation-icon {
+    height: 12px;
+    width: 10px;
+    background-color: #ccc;
+    border-radius: 50% 0% 50% 0%;
+    display: inline-block;
+    margin-right: 10px;
+    transform: rotate(60deg);
+}
+
+.password-validation li.valid .validation-icon {
+    background-color: green;
+}
+
+.password-validation li.invalid .validation-icon {
+    background-color: red;
+}
+
 .footer-links {
     margin-top: 20px;
 }
@@ -134,18 +171,18 @@ nav {
     text-decoration: underline;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 600px) {
     .register-form {
-        width: 90%; /* Responsive width */
+        width: 90%; 
     }
 
     nav {
-        flex-direction: column; /* Stack navbar items on smaller screens */
-        align-items: flex-start; /* Align items to the left */
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 
     .logo {
-        font-size: 20px; /* Smaller logo on mobile */
+        font-size: 20px; 
     }
 }

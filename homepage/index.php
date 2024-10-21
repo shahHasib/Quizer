@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
   <title>DemoTitle</title>
 </head>
-
 <body id="home">
 <div class="progress-container">
         <div class="progress-bar"></div>
@@ -19,22 +17,22 @@
       </div>
       <div class="links">
         <a href="#home">Home</a>
-        <a href="#container">Quizes</a>
+        <a href="#container">Quizzes</a>
        
         <a href="../aboutus/about.php">About Us</a>
         <a href="../contacus/contac.php">Feedback</a>
-        <!-- </div>
-        <div class="colors"> -->
-        <!-- <span class="colorName">Color :</span> <select name="color" id="color">
-
-          <option value="red" selected>Red</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="black">black</option>
-          <option value="gray">Gray</option>
-          <option value="aqua">Aqua</option>
-        </select> -->
-      </div>
+        </div>
+      <div class="theme-selector">
+                <span>Theme:</span>
+                <select name="color" id="color">
+                    <option value="">Default</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="black">Black</option>
+                    <option value="gray">Gray</option>
+                    <option value="aqua">Aqua</option>
+                </select>
+            </div>
       <div class="menu">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -45,7 +43,7 @@
           session_start();
           if (isset($_SESSION['username'])) {
               echo '<h6 class="userName" style="font-size:20pt;">Hi, ' . htmlspecialchars($_SESSION['username']) . '</h6>';
-              echo '<a href="../homepage/logout.php"  class="logout"><img src="../resources/logout.png" alt="" style="height: 45px;filter:drop-shadow(2px 2px 20px aqua);border:2px solid white;border-radius:50%;overflow:hidden;outline:none;padding:10px;"></a>';
+              echo '<a href="../homepage/logout.php"  class="logout"><img src="../resources/exit.png" alt="" title="logout" style="height: 9vh;border:noen;border-radius:50%;overflow:hidden;outline:none;padding:10px;"></a>';
           } else {
               echo '<a href="../registerpage/login.html" id="signin">Login</a>';
           }
@@ -53,17 +51,13 @@
         </div>
     </nav>
   <div class="bg">
-  <p class="text">Great collection of <i> Quizes</i> </br> to acquire computer knowledge.</p>
+  <p class="text">Great collection of <i> Quizzes</i> </br> to acquire computer knowledge.</p>
     <img src="../resources/web.jpg" alt="" />
     <button onclick="window.location.href='#container'">Get Started</button>
   </div>
 
   <div class="container" id="container">
     <div class="intro">
-      <div>
-        <!-- <h1>Coding quizzes for kids and teens</h1> -->
-        
-      </div>
       <div class="switchbtn">
         <button class="btnQuizzes">All Practice Quizzes</button>
         <button class="btnLeaderboard">Leaderboard</button>
@@ -1190,6 +1184,57 @@
           </div>
           <button class="btnPlay">Play Now</button>
         </div>
+
+        <?php
+include('../registerpage/db_connection.php'); // Include your database connection
+
+// Fetch quizzes from the database
+$sql = "SELECT * FROM quizzes";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        $quizId = $row['id']; // Assume you have an ID column
+        $title = htmlspecialchars($row['title']);
+        $grade = htmlspecialchars($row['grade']); // Assuming there's a grade column
+        $level = htmlspecialchars($row['level']); // Assuming there's a level column
+        $imageUrl = htmlspecialchars($row['image_url']); // Assuming you have image URLs
+
+        echo "
+        <div class='card' data-category='$quizId' data-grade='$grade' data-level='$level'>
+            <div class='img'>
+                <img src='$imageUrl' alt='$title img' />
+            </div>
+            <div class='items'>
+                <h2>$title</h2>
+                <div class='grade'>
+                    <img src='../resources/icons8-graduation-48.png' alt='Grade' />
+                    <span>Grade: $grade</span>
+                </div>
+                <div class='level'>
+                    <img src='../resources/icons8-levels-32.png' alt='Level' />
+                    <span>$level Level</span>
+                </div>
+                <button class='btnPlay' onclick=\"startQuiz($quizId)\">Play Now</button>
+            </div>
+        </div>
+        ";
+    }
+} else {
+    echo "<p>No quizzes available.</p>";
+}
+$conn->close();
+?>
+
+<script>
+function startQuiz(quizId) {
+    // Redirect to the quiz page or load quiz questions based on the quiz ID
+    window.location.href = `quiz_page.php?id=${quizId}`;
+}
+</script>
+
+
       </div>
 
 
@@ -1205,9 +1250,8 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="../registerpage/register.html">Login</a></li>
-            <li><a href="../aboutus/about.html">About Us</a></li>
-            <li><a href="../contacus/conatc.html">Feedback</a></li>
+            <li><a href="../aboutus/about.php">About Us</a></li>
+            <li><a href="../contacus/contac.php">Feedback</a></li>
           </ul>
         </div>
         <div class="footer-social">
@@ -1218,7 +1262,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Quizer. All Rights Reserved.</p>
+        <p>&copy; 2024 Quizzer. All Rights Reserved.</p>
       </div>
     </footer>
 

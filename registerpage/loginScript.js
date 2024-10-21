@@ -33,72 +33,56 @@ pass.addEventListener("blur", function () {
     }
 });
 
-// Password validation on input
+// Simplified Password validation on input
 pass.addEventListener("input", function () {
     var value = pass.value;
 
     // Lowercase letter
-    if (/(?=.*[a-z])/.test(value)) {
+    if (/[a-z]/.test(value)) {
         validationChecks.lowercase.parentElement.classList.add("valid");
     } else {
         validationChecks.lowercase.parentElement.classList.remove("valid");
     }
 
     // Uppercase letter
-    if (/(?=.*[A-Z])/.test(value)) {
+    if (/[A-Z]/.test(value)) {
         validationChecks.uppercase.parentElement.classList.add("valid");
     } else {
         validationChecks.uppercase.parentElement.classList.remove("valid");
     }
 
     // Digit
-    if (/(?=.*\d)/.test(value)) {
+    if (/\d/.test(value)) {
         validationChecks.digit.parentElement.classList.add("valid");
     } else {
         validationChecks.digit.parentElement.classList.remove("valid");
     }
 
     // Special character
-    if (/(?=.*[@$!%*?&])/.test(value)) {
+    if (/[@$!%*?&]/.test(value)) {
         validationChecks.special.parentElement.classList.add("valid");
     } else {
         validationChecks.special.parentElement.classList.remove("valid");
     }
 
     // Length check
-    if (/.{8,}/.test(value)) {
+    if (value.length >= 8) {
         validationChecks.length.parentElement.classList.add("valid");
     } else {
         validationChecks.length.parentElement.classList.remove("valid");
     }
 });
 
+
 // Form validation function
-function regValidation() {
-    var emailValue = email.value;
-    var passwordValue = pass.value;
+function validateInput() {
+    var emailValue = document.getElementById("email").value;
+    var passwordValue = document.getElementById("password").value;
 
-    // Email validation
-    if (emailValue === "") {
-        alert("Please enter an email.");
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(emailValue)) {
+        alert("Please enter a valid email in the format: example@domain.com");
         return false;
     }
-    if (!/\S+@\S+\.\S+/.test(emailValue)) {
-        alert("Please enter a valid email.");
-        return false;
-    }
-
-    // Password validation
-    if (passwordValue === "") {
-        alert("Please enter a password.");
-        return false;
-    }
-    if (!/.{8,}/.test(passwordValue) || !/(?=.*[a-z])/.test(passwordValue) ||
-        !/(?=.*[A-Z])/.test(passwordValue) || !/(?=.*\d)/.test(passwordValue) ||
-        !/(?=.*[@$!%*?&])/.test(passwordValue)) {
-        alert("Password does not meet the required criteria.");
-        return false;
-    }
-
     return true;
 }

@@ -101,11 +101,11 @@
     }
 
     .logout {
-      margin-left: 20px;
-      color: white;
-      cursor: pointer;
-      background-color:var(--main-color);
-    }
+  padding: 5px;
+  color: var(--navbar-text-color);
+  cursor: pointer;
+ 
+}
   </style>
 </head>
 
@@ -121,13 +121,13 @@
       </div>
       
       <div class="user-status" style="display:flex;align-items:center;">
-        <?php
+      <?php
           session_start();
           if (isset($_SESSION['username'])) {
-              echo '<h6 class="userName" style="font-size:20px;">Hi, ' . htmlspecialchars($_SESSION['username']) . '</h6>';
-              echo '<a href="../homepage/logout.php"  class="logout"><img src="../resources/exit.png" alt="" style="height: 6vh;"></a>';
+              echo '<h6 class="userName" style="font-size:20pt;">Hi, ' . htmlspecialchars($_SESSION['username']) . '</h6>';
+              echo '<a href="../homepage/logout.php"  class="logout"><img src="../resources/exit.png" alt="" title="logout" style="height: 9vh;border:noen;border-radius:50%;overflow:hidden;outline:none;padding:10px;"></a>';
           } else {
-              echo '<a href="../registerpage/register.html" id="signin">Login</a>';
+              echo '<a href="../registerpage/login.html" id="signin">Login</a>';
           }
           ?>
 

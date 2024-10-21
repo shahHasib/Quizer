@@ -4,56 +4,99 @@ color.addEventListener('change', (e) => {
     document.documentElement.style.setProperty('--main-color', e.target.value);
 });
 
-// Validation
+
 var username = document.getElementById("username");
 var email = document.getElementById("email");
-var password = document.getElementById("password");
-var confirmPassword = document.getElementById("cpassword");
+var pass = document.getElementById("password");
 var btnSubmit = document.getElementById("btnSubmit");
+var validationSection = document.querySelector('.password-validation');
+var confirmPassword = document.getElementById("cpassword");
 
-var errText1 = document.querySelector(".errText-1");
-var errText2 = document.querySelector(".errText-2");
-var errText3 = document.querySelector(".errText-3");
-var errText4 = document.querySelector(".errText-4");
-var errText5 = document.querySelector(".errText-5");
+var email = document.getElementById("email");
+var pass = document.getElementById("password");
+var btnSubmit = document.getElementById("btnSubmit");
+var validationSection = document.querySelector('.password-validation');
 
-function regValidation() {
-    let valid = true;
+var validationChecks = {
+    lowercase: document.getElementById("lowercase-check"),
+    uppercase: document.getElementById("uppercase-check"),
+    digit: document.getElementById("digit-check"),
+    special: document.getElementById("special-check"),
+    length: document.getElementById("length-check"),
+};
 
-    // Reset error messages
-    errText1.textContent = "";
-    errText2.textContent = "";
-    errText3.textContent = "";
-    errText4.textContent = "";
-    errText5.textContent = "";
 
-    if (username.value === "") {
-        errText1.textContent = "Username is required.";
-        valid = false;
-    }
+validationSection.style.display = "none";
 
-    if (email.value === "") {
-        errText2.textContent = "Email is required.";
-        valid = false;
-    }
 
-    if (password.value === "") {
-        errText3.textContent = "Password is required.";
-        valid = false;
-    } else if (password.value !== confirmPassword.value) {
-        errText4.textContent = "Passwords do not match.";
-        valid = false;
-    }
-
-    if (confirmPassword.value === "") {
-        errText5.textContent = "Confirm Password is required.";
-        valid = false;
-    }
-
-    return valid;
-}
-
-// Additional validation for password strength (optional)
-password.addEventListener("input", function () {
-    // Add your password strength validation here if needed
+pass.addEventListener("focus", function () {
+    validationSection.style.display = "block";
 });
+
+// Hide validation hints if password field is unfocused and empty
+pass.addEventListener("blur", function () {
+    if (pass.value === "") {
+        validationSection.style.display = "none";
+    }
+});
+
+// Simplified Password validation on input
+pass.addEventListener("input", function () {
+    var value = pass.value;
+
+    // Lowercase letter
+    if (/[a-z]/.test(value)) {
+        validationChecks.lowercase.parentElement.classList.add("valid");
+    } else {
+        validationChecks.lowercase.parentElement.classList.remove("valid");
+    }
+
+    // Uppercase letter
+    if (/[A-Z]/.test(value)) {
+        validationChecks.uppercase.parentElement.classList.add("valid");
+    } else {
+        validationChecks.uppercase.parentElement.classList.remove("valid");
+    }
+
+    // Digit
+    if (/\d/.test(value)) {
+        validationChecks.digit.parentElement.classList.add("valid");
+    } else {
+        validationChecks.digit.parentElement.classList.remove("valid");
+    }
+
+    // Special character
+    if (/[@$!%*?&]/.test(value)) {
+        validationChecks.special.parentElement.classList.add("valid");
+    } else {
+        validationChecks.special.parentElement.classList.remove("valid");
+    }
+
+    // Length check
+    if (value.length >= 8) {
+        validationChecks.length.parentElement.classList.add("valid");
+    } else {
+        validationChecks.length.parentElement.classList.remove("valid");
+    }
+});
+
+
+// Form validation function
+function validateInput() {
+    var emailValue = document.getElementById("email").value;
+    var passwordValue = document.getElementById("password").value;
+
+    // Email regex allowing alphanumeric characters, periods, underscores, and hyphens
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(emailValue)) {
+        alert("Please enter a valid email in the format: example@domain.com");
+        return false;
+    }
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{8,}$/;
+    if (!passwordRegex.test(passwordValue)) {
+        alert("Password must be at least 8 characters long and include uppercase, lowercase, and a digit.");
+        return false;
+    }
+
+    return true;
+}

@@ -10,7 +10,7 @@
 
 <body>
     <header>
-    <?php include('../partials/header.php'); ?>
+        <?php include('../partials/header.php'); ?>
     </header>
 
     <div class="container" id="about">
@@ -18,19 +18,24 @@
         <div class="about-content">
             <h2>Our Mission</h2>
             <p>At Quizer, our mission is to provide engaging and educational quizzes to help kids and teens learn coding
-                and computer science in a fun and interactive way.</p>
+                and computer science in a fun and interactive way. We believe in creating an interactive learning
+                environment that inspires curiosity and growth in young learners.</p>
 
             <h2>Our Story</h2>
             <p>Founded in 2024, Quizer was created with the goal of making learning programming more accessible and
-                enjoyable. Our team is dedicated to providing high-quality content and an intuitive user experience.</p>
+                enjoyable. Our platform offers a wide range of quizzes designed to challenge and entertain while
+                fostering a love for coding and technology. From coding basics to more advanced topics, our quizzes
+                cater to different skill levels and learning speeds.</p>
 
             <h2>Our Team</h2>
-            <p>Our team consists of experienced educators, developers, and designers who are passionate about technology
-                and education. We are committed to delivering the best learning experience possible.</p>
+            <p>Our dedicated team is composed of educators, developers, and designers who share a passion for education
+                and technology. We collaborate to create quizzes and content that resonate with students of all ages,
+                and we continuously strive to improve the user experience to make learning more fun, efficient, and
+                accessible.</p>
         </div>
     </div>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-links">
                 <h3>Quick Links</h3>

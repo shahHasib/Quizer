@@ -2,7 +2,7 @@
 include('../registerpage/db_connection.php'); // Ensure this path is correct
 
 // Fetch leaderboard data
-$sql = "SELECT username, score FROM leaderboard ORDER BY score DESC";
+$sql = "SELECT username, score FROM leaderboard ORDER BY score DESC LIMIT 10";
 $result = $conn->query($sql);
 ?>
 
@@ -22,32 +22,26 @@ $result = $conn->query($sql);
             width: 100%;
         }
         table {
-            width: 100%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            text-align:center;
-            box-shadow: 0 0px 5px var(--main-color),0 0px 5px var(--main-color);
-        }
-        th, td {
-            padding:10px 20px;
-            text-align: center;
-            border: 2px solid black;
-            margin:1px;
-            background-color: white;
-            color:black;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: white;
-            color:black;
-        }
-        tr:hover {
-            background-color: #ddd;
-        }
-        .rank {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+}
+
+table th {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+.rank {
             font-weight: bold;
             color: #4CAF50;
         }
@@ -68,21 +62,25 @@ $result = $conn->query($sql);
 <div class="contains">
     <table>
         <tr>
-            <th>Rank</th>
-            <th>Username</th>
-            <th>Score</th>
+            <th colspan='3'>Rank</th>
+            <th colspan='3'>Username</th>
+            <th colspan='3'>Score</th>
         </tr>
         <?php
-        //header("Refresh:5")
+      
         if ($result->num_rows > 0) {
             $rank = 1;
+            
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td class='rank'>" . $rank . "</td>";
-                echo "<td class='username'>" . htmlspecialchars($row['username']) . "</td>";
-                echo "<td class='score'>" . htmlspecialchars($row['score']) . "</td>";
+                echo "<td class='rank' colspan='3'>" . $rank . "</td>";
+                echo "<td class='username'colspan='3'>" . htmlspecialchars($row['username']) . "</td>";
+                echo "<td class='score'colspan='3'>" . htmlspecialchars($row['score']) . "</td>";
                 echo "</tr>";
-                $rank++;
+                if($rank <= 10){
+                    $rank++;
+                }
+               
             }
         } else {
             echo "<tr><td colspan='3'>No data available</td></tr>";

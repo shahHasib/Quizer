@@ -150,6 +150,10 @@ nav {
   display: inline-block;
   margin-right: 10px;
 }
+.logo img {
+  height: 5vh;
+}
+
 
 .password-validation li.valid .validation-icon {
   background-color: green;
