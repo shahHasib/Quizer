@@ -6,7 +6,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #906FD8;
+    background: linear-gradient(135deg, #c850c0, #4158d0);
+    user-select: none;
 }
 
 .container {
@@ -26,6 +27,10 @@ h1{
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
+}
+#q{
+    color: black;
+    z-index: 12;
 }
 
 .question {
@@ -146,20 +151,12 @@ button.wrong {
     cursor: pointer;
 }
 
-#username {
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px 0;
-    width: 80%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
 #submit-score {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: rgb(223, 87, 38);
+    background-color: #ed4ee3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -167,10 +164,10 @@ button.wrong {
 }
 
 button:hover {
-    background-color: #d71f1f;
+    background-color:  #ba13af;
 }
 
-/* Positioning buttons */
+
 #quiz-page button {
     margin-top: 10px;
     display: block;
@@ -179,9 +176,7 @@ button:hover {
 #question-container {
     margin-bottom: 20px;
 }
-/* styles.css */
 
-/* Loader styles */
 .loader {
     position: fixed;
     top: 0;
@@ -199,6 +194,7 @@ button:hover {
    
    
     border-top: 5px solid #906FD8;
+    border-bottom: 5px solid  #ed4ee3;
     padding: 5px;
     border-radius: 100%;
     width: 50px;

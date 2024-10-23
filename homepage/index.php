@@ -1184,57 +1184,6 @@
           </div>
           <button class="btnPlay">Play Now</button>
         </div>
-
-        <?php
-include('../registerpage/db_connection.php'); // Include your database connection
-
-// Fetch quizzes from the database
-$sql = "SELECT * FROM quizzes";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        $quizId = $row['id']; // Assume you have an ID column
-        $title = htmlspecialchars($row['title']);
-        $grade = htmlspecialchars($row['grade']); // Assuming there's a grade column
-        $level = htmlspecialchars($row['level']); // Assuming there's a level column
-        $imageUrl = htmlspecialchars($row['image_url']); // Assuming you have image URLs
-
-        echo "
-        <div class='card' data-category='$quizId' data-grade='$grade' data-level='$level'>
-            <div class='img'>
-                <img src='$imageUrl' alt='$title img' />
-            </div>
-            <div class='items'>
-                <h2>$title</h2>
-                <div class='grade'>
-                    <img src='../resources/icons8-graduation-48.png' alt='Grade' />
-                    <span>Grade: $grade</span>
-                </div>
-                <div class='level'>
-                    <img src='../resources/icons8-levels-32.png' alt='Level' />
-                    <span>$level Level</span>
-                </div>
-                <button class='btnPlay' onclick=\"startQuiz($quizId)\">Play Now</button>
-            </div>
-        </div>
-        ";
-    }
-} else {
-    echo "<p>No quizzes available.</p>";
-}
-$conn->close();
-?>
-
-<script>
-function startQuiz(quizId) {
-    // Redirect to the quiz page or load quiz questions based on the quiz ID
-    window.location.href = `quiz_page.php?id=${quizId}`;
-}
-</script>
-
-
       </div>
 
 

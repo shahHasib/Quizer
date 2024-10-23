@@ -31,6 +31,7 @@
       font-size: 15pt;
       background-color: var(--main-color);
       height: 100vh;
+      user-select:none;
     }
 
     select {

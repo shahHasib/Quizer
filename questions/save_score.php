@@ -1,11 +1,11 @@
 <?php
 include('../registerpage/db_connection.php'); // Ensure this path is correct
 
-
+session_start();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['user']);
+    $username = $_SESSION["username"];
     $score = trim($_POST['score']);
 
     if (empty($username)) {
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Prepare and bind
+    
     $stmt = $conn->prepare("INSERT INTO leaderboard (username, score) VALUES (?, ?)");
     if ($stmt === false) {
         error_log("Error preparing statement: " . $conn->error);

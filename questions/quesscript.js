@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitScoreButton = document.getElementById('submit-score');
     const usernameInput = document.getElementById('username');
     const finalScoreElement = document.getElementById('final-score');
-    const leaderboardList = document.getElementById('leaderboard-list');
     const pauseButton = document.getElementById('pause-button');
     const restartButton = document.getElementById('restart-button');
     const backButton = document.getElementById('back-button');
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const scoreElement = document.getElementById('score');
     const music = new Audio("../resources/play.mp3");
-
+    
     let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -51,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         endPage.style.display = 'none';
         score = 0;
         currentQuestionIndex = 0;
+        
         scoreElement.textContent = score;
         loadQuestion();
         music.play();
@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             nameModal.style.display = 'block'; // Show the modal for name entry
             return;
         }
-
+        let num=currentQuestionIndex+1;
         const question = questions[currentQuestionIndex];
-        document.getElementById('question').innerHTML = question.question;
+        document.getElementById('question').innerHTML = "Q"+num+". "+question.question;
         const allOptions = [...question.incorrect_answers, question.correct_answer];
         shuffleArray(allOptions);
-        options.innerHTML = ''; // Clear previous options
+        options.innerHTML = ''; 
 
         allOptions.forEach(option => {
             const button = document.createElement('button');
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleOptionClick(button, selectedOption) {
         const correctAnswer = questions[currentQuestionIndex].correct_answer;
 
-        // Highlight buttons based on correctness
+        
         document.querySelectorAll('.option').forEach(btn => {
             if (btn.textContent === correctAnswer) {
                 btn.style.backgroundColor = 'green'; // Green for correct answer
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreElement.textContent = score;
         }
 
-        // Disable buttons after selection
+        
         document.querySelectorAll('.option').forEach(btn => btn.disabled = true);
 
         setTimeout(() => {
             currentQuestionIndex++;
             loadQuestion();
-        }, 1000); // Delay to allow user to see the result
+        }, 1500); // Delay to allow user to see the result
     }
 
     function startTimer() {
@@ -169,15 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nameModal.style.display = 'none';
     });
 
-    pauseButton.addEventListener('click', () => {
-        isPaused = !isPaused;
-        if (isPaused) {
-            pauseButton.textContent = 'Resume';
-        } else {
-            pauseButton.textContent = 'Pause';
-            startTimer(); // Resume timer
-        }
-    });
 
     restartButton.addEventListener('click', () => {
         startQuiz(); // Restart the quiz

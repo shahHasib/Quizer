@@ -30,11 +30,11 @@ else{
         <div id="quiz-page" style="display:none;">
             
             <div id="question-container">
-                <h2 id="question"></h2>
+              <div><h2 id="question"></h2></div> 
                 <div id="options"></div>
                 <div id="timer">Time left: <span id="time-left">5</span>s</div>
             </div>
-            <button id="pause-button">Pause</button>
+          
             <button id="restart-button">Restart</button>
             <button id="back-button">Back</button>
             <div id="scoreboard">Score: <span id="score">0</span></div>
@@ -45,11 +45,11 @@ else{
             <div id="name-modal" class="modal">
                 <div class="modal-content">
                     <form action="./save_score.php" method="post">
-                    <span class="close">&times;</span>
-                    <h2>Enter Your Name</h2>
-                    Your score is :<p id="final-score"></p>
-                    <input type="text" id="username" placeholder="Enter your name" name="user" />
-                    <button id="submit-score" type="submit">Submit Score</button>
+                    <span class="close">&times;</span>  
+                   <div class="score-area">
+                   <h2>Your score is :</h2><input type="text" id="final-score" name="score"/>
+                   </div> 
+                    <button id="submit-score" type="submit">Go To Leaderboard</button>
                     </form>
                 </div>
             </div>

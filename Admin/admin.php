@@ -5,7 +5,7 @@ include('../registerpage/db_connection.php');
 // Get total users
 function getTotalUsers() {
     global $conn;
-    $sql = "SELECT COUNT(*) as total_users FROM users";
+    $sql = "SELECT COUNT(*) as total_users FROM users WHERE admin='0'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     echo $row['total_users'];
@@ -14,7 +14,7 @@ function getTotalUsers() {
 // Fetch users for management
 function getUsers() {
     global $conn;
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM users WHERE admin='0';";
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc()) {
@@ -24,7 +24,7 @@ function getUsers() {
             <td>{$row['email']}</td>
             <td>
                
-                <button onclick=\"viewUserDetails({$row['id']})\">View Details</button>
+                <button onclick=\"deleteUser({$row['id']})\">Delete User</button>
             </td>
         </tr>";
     }

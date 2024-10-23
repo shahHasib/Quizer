@@ -1,28 +1,21 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin_logged_in'])) {
-    header('Location: login.php');
-    exit();
-}
 include('../registerpage/db_connection.php');
 
 $message = ""; // Variable to hold alert message
 $alertType = ""; // Variable to hold alert type
 
 if (isset($_GET['id'])) {
-    $leaderboard_id = $_GET['id'];
-
-    $stmt = $conn->prepare("DELETE FROM leaderboard WHERE id = ?");
-    $stmt->bind_param("i", $leaderboard_id);
-
+    $userId = $_GET['id'];
+    $sql = "DELETE FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $userId);
     if ($stmt->execute()) {
-        $message = "Leaderboard entry deleted successfully!";
-        $alertType = "success"; // For success alert
+        $message = "User deleted successfully!";
+        $alertType = "success"; // Success alert
     } else {
-        $message = "Error: " . $conn->error;
-        $alertType = "error"; // For error alert
+        $message = "Something went wrong!";
+        $alertType = "error"; // Error alert
     }
-
     $stmt->close();
 }
 ?>
@@ -33,7 +26,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Delete Leaderboard Entry</title>
+    <title>Delete User</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -84,37 +77,26 @@ if (isset($_GET['id'])) {
         }
 
         /* Button Style */
-        button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff; 
-    background: linear-gradient(105deg, #00BFFF, #FF6F61); 
-    border: none;
-    border-radius: 6px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-    cursor: pointer;
-    transition: all 0.3s ease; 
-}
+        .alert-box button {
+            background-color: #007BFF; /* Primary color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
 
-button:hover {
-    background: linear-gradient(45deg, #00A3CC, #FF5B50);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+        .alert-box button:hover {
+            background-color: #0056b3; /* Darker blue */
+        }
 
-button:active {
-    transform: translateY(0); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-}
         /* Fade In Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-60px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -125,6 +107,22 @@ button:active {
 </head>
 <body>
 
-   
+    <div class="overlay" id="overlay" style="<?= !empty($message) ? 'display: flex;' : ''; ?>">
+        <div class="alert-box">
+            <h2><?= $alertType === "success" ? 'Success!' : 'Error!' ?></h2>
+            <p><?= htmlspecialchars($message) ?></p>
+            <button onclick="closeAlert()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function closeAlert() {
+            document.getElementById('overlay').style.display = 'none'; // Hide the alert box
+            window.location.href="admin.php";
+        }
+
+        // Auto-close alert after 3 seconds (optional)
+        setTimeout(closeAlert, 3000);
+    </script>
 </body>
 </html>
